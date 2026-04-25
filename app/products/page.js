@@ -1,18 +1,19 @@
 'use client'
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-export default function Products() {
+// 封装成内部组件，包裹 Suspense
+function ProductsContent() {
   const searchParams = useSearchParams();
-  const categoryFromUrl = searchParams.get('category');
   const [activeCategory, setActiveCategory] = useState('ghk-cu');
 
   useEffect(() => {
-    if (categoryFromUrl) {
-      setActiveCategory(categoryFromUrl);
+    const cat = searchParams?.get('category');
+    if (cat) {
+      setActiveCategory(cat);
     }
-  }, [categoryFromUrl]);
+  }, [searchParams]);
 
   const products = [
     { id: 2, title: 'GHK-CU 50mg', purity: '99% Purity', image: '/img/l1.png', category: 'ghk-cu' },
@@ -46,7 +47,7 @@ export default function Products() {
   const filtered = products.filter(p => p.category === activeCategory);
 
   return (
-    <main className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <>
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/img/p1.png')" }} />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-blue-900/50" />
@@ -76,32 +77,28 @@ export default function Products() {
           ))}
         </div>
 
-        {/* 产品卡片布局 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {filtered.map(item => (
             <div key={item.id} className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
-              
-             {/* 调整后：适中大小，比刚才大，不撑爆卡片 */}
-<div className="h-60 flex items-center justify-center p-4 overflow-hidden">
-  <img 
-    src={item.image} 
-    alt={item.title} 
-    className="w-auto h-full max-h-[300px] object-contain group-hover:scale-105 transition-transform duration-500" 
-  />
-</div>
-
+              <div className="h-60 flex items-center justify-center p-4 overflow-hidden">
+                <img 
+                  src={item.image} 
+                  alt={item.title} 
+                  className="w-auto h-full max-h-[300px] object-contain group-hover:scale-105 transition-transform duration-500" 
+                />
+              </div>
               <div className="p-6">
                 <div className="text-xs text-blue-600 font-semibold mb-1">{item.purity}</div>
                 <h3 className="text-xl font-bold mb-2 text-gray-800">{item.title}</h3>
                 <div className="flex justify-between items-center">
                   <Link href="/contact" className="text-blue-600 font-medium hover:underline">View Details</Link>
                   <Link 
-                            href="https://wa.me/85259951323" 
-                            target="_blank" 
-                            className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition"
-                          >
-                            Inquiry
-                          </Link>
+                    href="https://wa.me/85259951323" 
+                    target="_blank" 
+                    className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition"
+                  >
+                    Inquiry
+                  </Link>
                 </div>
               </div>
             </div>
@@ -114,6 +111,17 @@ export default function Products() {
         <p className="text-blue-100 mb-8 max-w-2xl mx-auto">We provide high-quality peptides and custom synthesis services for global customers.</p>
         <Link href="/contact" className="bg-white text-blue-700 font-medium px-8 py-3 rounded-full hover:bg-gray-100 transition">Contact Us Now</Link>
       </section>
+    </>
+  );
+}
+
+// 主组件：用 Suspense 包裹，解决报错！
+export default function Products() {
+  return (
+    <main className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <Suspense fallback={<div className="text-center py-20">Loading...</div>}>
+        <ProductsContent />
+      </Suspense>
     </main>
   );
 }
