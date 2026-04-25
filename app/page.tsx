@@ -1,76 +1,9 @@
-'use client'  // 👈 就是加了这一行，错误彻底消失
+'use client'
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
 
-export default function Home() {
-  // 轮播图图片（你只需要替换这里的图片名称）
-  const slides = [
-    '/img/m2.png',
-    '/img/m3.png',
-    '/img/m4.png',
-    '/img/m1.png',
-  ];
-
-  const [current, setCurrent] = useState(0);
-
-  // 自动轮播
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, 3000); // 3秒切换一次
-    return () => clearInterval(interval);
-  }, []);
-
+export default function() {
   return (
     <main className="pt-16">
-      {/* 全屏 Banner 轮播图 */}
-      <section className="relative h-[85vh] flex items-center justify-center text-white overflow-hidden">
-        
-        {/* 轮播图片 */}
-        {slides.map((src, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
-              index === current ? 'opacity-100' : 'opacity-0'
-            }`}
-            style={{ backgroundImage: `url(${src})` }}
-          />
-        ))}
-
-        {/* 黑色遮罩 */}
-        <div className="absolute inset-0 bg-black/50" />
-
-        {/* 中间文字 */}
-        <div className="relative z-10 text-center px-4 max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Next-Generation Beauty Peptide Solutions
-          </h1>
-          <p className="text-lg md:text-xl mb-8 text-gray-200">
-            Science-Backed Peptides for Radiant, Healthy, Age-Defying Skin
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="#products" className="bg-white text-black px-8 py-3 rounded font-medium hover:bg-gray-100 transition-colors">
-              Explore Products
-            </Link>
-            <Link href="/about" className="border border-white px-8 py-3 rounded font-medium hover:bg-white hover:text-black transition-colors">
-              About Us
-            </Link>
-          </div>
-        </div>
-
-        {/* 轮播小点 */}
-        <div className="absolute bottom-8 flex gap-3 z-10">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              className={`w-3 h-3 rounded-full ${
-                current === i ? 'bg-white' : 'bg-white/40'
-              }`}
-            />
-          ))}
-        </div>
-      </section>
 
       {/* 产品展示区 */}
       <section id="products" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,8 +14,9 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* 产品1 */}
+        {/* 一行 4 个产品 */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* 产品1 GHK-CU */}
           <div className="group cursor-pointer">
             <div className="overflow-hidden rounded-lg mb-4">
                 <img
@@ -91,14 +25,16 @@ export default function Home() {
                   className="w-full h-auto max-h-64 object-contain group-hover:scale-105 transition-transform duration-300"
                 />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Collagen-Boosting Peptide</h3>
-            <p className="text-gray-600 text-sm mb-4">Stimulates collagen production, reducing fine lines and wrinkles.</p>
-            <Link href="/contact" className="text-blue-600 font-medium hover:underline">
-              Send Inquiry →
-            </Link>
+            <h3 className="text-xl text-center font-semibold mb-2">GHK-CU</h3>
+            <div className="text-center">
+              {/* 跳转到产品页，并自动选中 ghk-cu 分类 */}
+              <Link href="/products?category=ghk-cu" className="text-blue-600 font-medium hover:underline">
+                More Products →
+              </Link>
+            </div>
           </div>
 
-          {/* 产品2 */}
+          {/* 产品2 RT Peptide */}
           <div className="group cursor-pointer">
             <div className="overflow-hidden rounded-lg mb-4">
               <img
@@ -107,14 +43,16 @@ export default function Home() {
                 className="w-full h-auto max-h-64 object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Hydrating Peptide Complex</h3>
-            <p className="text-gray-600 text-sm mb-4">Deeply moisturizes, improves skin barrier and reduces dryness.</p>
-            <Link href="/contact" className="text-blue-600 font-medium hover:underline">
-              Send Inquiry →
-            </Link>
+            <h3 className="text-xl text-center font-semibold mb-2">RT Peptide</h3>
+            <div className="text-center">
+              {/* 跳转到产品页，并自动选中 rt 分类 */}
+              <Link href="/products?category=rt" className="text-blue-600 font-medium hover:underline">
+                More Products →
+              </Link>
+            </div>
           </div>
 
-          {/* 产品3 */}
+          {/* 产品3 Tirz Peptide */}
           <div className="group cursor-pointer">
             <div className="overflow-hidden rounded-lg mb-4">
               <img
@@ -123,11 +61,31 @@ export default function Home() {
                 className="w-full h-auto max-h-64 object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Brightening Peptide Serum</h3>
-            <p className="text-gray-600 text-sm mb-4">Fades dark spots, evens skin tone and enhances radiance.</p>
-            <Link href="/contact" className="text-blue-600 font-medium hover:underline">
-              Send Inquiry →
-            </Link>
+            <h3 className="text-xl text-center font-semibold mb-2">Tirz Peptide</h3>
+            <div className="text-center">
+              {/* 跳转到产品页，并自动选中 tirz 分类 */}
+              <Link href="/products?category=tirz" className="text-blue-600 font-medium hover:underline">
+                More Products →
+              </Link>
+            </div>
+          </div>
+
+          {/* 产品4 Semaglu Peptide */}
+          <div className="group cursor-pointer">
+            <div className="overflow-hidden rounded-lg mb-4">
+              <img
+                src="/img/l4.png"
+                alt="Beauty Peptide Product 4"
+                className="w-full h-auto max-h-64 object-contain group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <h3 className="text-xl text-center font-semibold mb-2">Semaglu Peptide</h3>
+            <div className="text-center">
+              {/* 跳转到产品页，并自动选中 semaglu 分类 */}
+              <Link href="/products?category=semaglu" className="text-blue-600 font-medium hover:underline">
+                More Products →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
