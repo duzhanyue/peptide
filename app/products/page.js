@@ -1,11 +1,20 @@
 'use client'
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 
-export default function Products({ searchParams }) {
-  // 服务端获取分类，纯 JS 语法，不报错
-  const defaultCategory = (searchParams && searchParams.category) || 'ghk-cu';
-  const [activeCategory, setActiveCategory] = useState(defaultCategory);
+// 封装成内部组件，不直接用 use()，改用 useEffect 读取
+function ProductsContent() {
+  const searchParams = useSearchParams();
+  const [activeCategory, setActiveCategory] = useState('ghk-cu');
+
+  useEffect(() => {
+    // 直接从 searchParams 读取参数，客户端组件不需要 use()
+    const cat = searchParams?.get('category');
+    if (cat) {
+      setActiveCategory(cat);
+    }
+  }, [searchParams]);
 
   const products = [
     { id: 2, title: 'GHK-CU 50mg', purity: '99% Purity', image: '/img/l1.png', category: 'ghk-cu' },
@@ -39,7 +48,7 @@ export default function Products({ searchParams }) {
   const filtered = products.filter(p => p.category === activeCategory);
 
   return (
-    <main className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <>
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/img/p1.png')" }} />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-blue-900/50" />
@@ -76,12 +85,13 @@ export default function Products({ searchParams }) {
                 <img 
                   src={item.image} 
                   alt={item.title}
+                  loading="lazy"
+                  decoding="async"
                   width="200"
                   height="200"
                   className="w-auto h-full max-h-[200px] object-contain group-hover:scale-105 transition-transform duration-500" 
                 />
               </div>
-
               <div className="p-6">
                 <div className="text-xs text-blue-600 font-semibold mb-1">{item.purity}</div>
                 <h3 className="text-xl font-bold mb-2 text-gray-800">{item.title}</h3>
@@ -101,11 +111,22 @@ export default function Products({ searchParams }) {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-blue-800 to-blue-600 py-16 text-center mt-16 text-white">
+      <section className="bg-gradient-to-r from-blue-800 to-blue-600 py-16 text-white text-center mt-16">
         <h2 className="text-3xl font-bold mb-4">Need Custom Peptide Solutions?</h2>
         <p className="text-blue-100 mb-8 max-w-2xl mx-auto">We provide high-quality peptides and custom synthesis services for global customers.</p>
         <Link href="/contact" className="bg-white text-blue-700 font-medium px-8 py-3 rounded-full hover:bg-gray-100 transition">Contact Us Now</Link>
       </section>
+    </>
+  );
+}
+
+// 主组件：用 Suspense 包裹，兼容新版 Next.js
+export default function Products() {
+  return (
+    <main className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <Suspense fallback={<div className="text-center py-20">Loading...</div>}>
+        <ProductsContent />
+      </Suspense>
     </main>
   );
 }
