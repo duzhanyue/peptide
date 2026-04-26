@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-// 封装成内部组件，包裹 Suspense
 function ProductsContent() {
   const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState('ghk-cu');
@@ -49,7 +48,10 @@ function ProductsContent() {
   return (
     <>
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/img/p1.png')" }} />
+        <div 
+          className="absolute inset-0 bg-cover bg-center" 
+          style={{ backgroundImage: "url('/img/p1.png')" }}
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-blue-900/50" />
         <div className="relative z-10 text-center px-4 text-white max-w-4xl">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Premium Peptide Products</h1>
@@ -80,13 +82,20 @@ function ProductsContent() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {filtered.map(item => (
             <div key={item.id} className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="h-60 flex items-center justify-center p-4 overflow-hidden">
+                
+              {/* ========== 优化后的图片（速度提升巨大）========== */}
+              <div className="w-full h-[240px] flex items-center justify-center p-4 overflow-hidden bg-gray-50">
                 <img 
                   src={item.image} 
-                  alt={item.title} 
-                  className="w-auto h-full max-h-[300px] object-contain group-hover:scale-105 transition-transform duration-500" 
+                  alt={item.title}
+                  loading="lazy"        
+                  decoding="async"     
+                  width="200"           
+                  height="200"         
+                  className="w-auto h-full max-h-[200px] object-contain group-hover:scale-105 transition-transform duration-500" 
                 />
               </div>
+
               <div className="p-6">
                 <div className="text-xs text-blue-600 font-semibold mb-1">{item.purity}</div>
                 <h3 className="text-xl font-bold mb-2 text-gray-800">{item.title}</h3>
@@ -115,7 +124,6 @@ function ProductsContent() {
   );
 }
 
-// 主组件：用 Suspense 包裹，解决报错！
 export default function Products() {
   return (
     <main className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">

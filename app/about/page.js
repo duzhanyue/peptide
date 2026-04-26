@@ -17,10 +17,14 @@ export default function About() {
       {/* 品牌简介（美妆肽核心业务，英文地道，适配外贸，贴合整体风格） */}
       <section className="mb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className="bg-gray-100 rounded-lg overflow-hidden">
             <img
               src="/img/c2.png"
               alt="Beauty Peptide Research Lab"
+              loading="lazy"
+              decoding="async"
+              width="600"
+              height="400"
               className="w-full h-auto rounded-lg shadow-lg object-cover"
             />
           </div>
@@ -89,10 +93,14 @@ export default function About() {
               <span className="bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm font-medium">HPLC Testing</span>
             </div>
           </div>
-          <div>
+          <div className="bg-gray-100 rounded-lg overflow-hidden">
             <img
               src="/img/c3.png"
               alt="Beauty Peptide Production Facility"
+              loading="lazy"
+              decoding="async"
+              width="600"
+              height="400"
               className="w-full h-auto rounded-lg shadow-lg object-cover"
             />
           </div>
