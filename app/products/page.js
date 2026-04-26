@@ -1,19 +1,26 @@
 'use client'
 import Link from 'next/link';
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-// 封装成内部组件，不直接用 use()，改用 useEffect 读取
-function ProductsContent() {
+export default function Products() {
   const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState('ghk-cu');
+  const [isLoading, setIsLoading] = useState(true);
 
+  // 读取 URL 分类
   useEffect(() => {
-    // 直接从 searchParams 读取参数，客户端组件不需要 use()
-    const cat = searchParams?.get('category');
-    if (cat) {
-      setActiveCategory(cat);
-    }
+    try {
+      const cat = searchParams?.get('category');
+      if (cat) {
+        setActiveCategory(cat);
+      }
+    } catch (e) {}
+
+    // 200ms 后关闭 loading，避免手机端卡死
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 200);
   }, [searchParams]);
 
   const products = [
@@ -47,8 +54,17 @@ function ProductsContent() {
 
   const filtered = products.filter(p => p.category === activeCategory);
 
+  // 加载中
+  if (isLoading) {
+    return (
+      <main className="pt-20 min-h-screen flex items-center justify-center text-gray-500">
+        Loading...
+      </main>
+    );
+  }
+
   return (
-    <>
+    <main className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/img/p1.png')" }} />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-blue-900/50" />
@@ -116,17 +132,6 @@ function ProductsContent() {
         <p className="text-blue-100 mb-8 max-w-2xl mx-auto">We provide high-quality peptides and custom synthesis services for global customers.</p>
         <Link href="/contact" className="bg-white text-blue-700 font-medium px-8 py-3 rounded-full hover:bg-gray-100 transition">Contact Us Now</Link>
       </section>
-    </>
-  );
-}
-
-// 主组件：用 Suspense 包裹，兼容新版 Next.js
-export default function Products() {
-  return (
-    <main className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      <Suspense fallback={<div className="text-center py-20">Loading...</div>}>
-        <ProductsContent />
-      </Suspense>
     </main>
   );
 }
