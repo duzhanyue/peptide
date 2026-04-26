@@ -1,18 +1,11 @@
 'use client'
 import Link from 'next/link';
-import { useState, useEffect, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useState } from 'react';
 
-function ProductsContent() {
-  const searchParams = useSearchParams();
-  const [activeCategory, setActiveCategory] = useState('ghk-cu');
-
-  useEffect(() => {
-    const cat = searchParams?.get('category');
-    if (cat) {
-      setActiveCategory(cat);
-    }
-  }, [searchParams]);
+export default function Products({ searchParams }) {
+  // 服务端获取分类，纯 JS 语法，不报错
+  const defaultCategory = (searchParams && searchParams.category) || 'ghk-cu';
+  const [activeCategory, setActiveCategory] = useState(defaultCategory);
 
   const products = [
     { id: 2, title: 'GHK-CU 50mg', purity: '99% Purity', image: '/img/l1.png', category: 'ghk-cu' },
@@ -46,12 +39,9 @@ function ProductsContent() {
   const filtered = products.filter(p => p.category === activeCategory);
 
   return (
-    <>
+    <main className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center" 
-          style={{ backgroundImage: "url('/img/p1.png')" }}
-        />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/img/p1.png')" }} />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-blue-900/50" />
         <div className="relative z-10 text-center px-4 text-white max-w-4xl">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Premium Peptide Products</h1>
@@ -82,16 +72,12 @@ function ProductsContent() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {filtered.map(item => (
             <div key={item.id} className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
-                
-              {/* ========== 优化后的图片（速度提升巨大）========== */}
               <div className="w-full h-[240px] flex items-center justify-center p-4 overflow-hidden bg-gray-50">
                 <img 
                   src={item.image} 
                   alt={item.title}
-                  loading="lazy"        
-                  decoding="async"     
-                  width="200"           
-                  height="200"         
+                  width="200"
+                  height="200"
                   className="w-auto h-full max-h-[200px] object-contain group-hover:scale-105 transition-transform duration-500" 
                 />
               </div>
@@ -115,21 +101,11 @@ function ProductsContent() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-blue-800 to-blue-600 py-16 text-white text-center mt-16">
+      <section className="bg-gradient-to-r from-blue-800 to-blue-600 py-16 text-center mt-16 text-white">
         <h2 className="text-3xl font-bold mb-4">Need Custom Peptide Solutions?</h2>
         <p className="text-blue-100 mb-8 max-w-2xl mx-auto">We provide high-quality peptides and custom synthesis services for global customers.</p>
         <Link href="/contact" className="bg-white text-blue-700 font-medium px-8 py-3 rounded-full hover:bg-gray-100 transition">Contact Us Now</Link>
       </section>
-    </>
-  );
-}
-
-export default function Products() {
-  return (
-    <main className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      <Suspense fallback={<div className="text-center py-20">Loading...</div>}>
-        <ProductsContent />
-      </Suspense>
     </main>
   );
 }

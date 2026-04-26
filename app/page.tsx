@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link';
 
-export default function() {
+export default function Home() {
   return (
     <main className="pt-16">
 
@@ -21,9 +21,7 @@ export default function() {
             <div className="overflow-hidden rounded-lg mb-4 bg-gray-50">
                 <img
                   src="/img/l1.png"
-                  alt="Beauty Peptide Product 1"
-                  loading="lazy"
-                  decoding="async"
+                  alt="GHK-CU Beauty Peptide"
                   width="300"
                   height="250"
                   className="w-full h-auto max-h-64 object-contain group-hover:scale-105 transition-transform duration-300"
@@ -42,9 +40,7 @@ export default function() {
             <div className="overflow-hidden rounded-lg mb-4 bg-gray-50">
               <img
                 src="/img/l2.png"
-                alt="Beauty Peptide Product 2"
-                loading="lazy"
-                decoding="async"
+                alt="RT Peptide"
                 width="300"
                 height="250"
                 className="w-full h-auto max-h-64 object-contain group-hover:scale-105 transition-transform duration-300"
@@ -63,9 +59,7 @@ export default function() {
             <div className="overflow-hidden rounded-lg mb-4 bg-gray-50">
               <img
                 src="/img/l3.png"
-                alt="Beauty Peptide Product 3"
-                loading="lazy"
-                decoding="async"
+                alt="Tirz Peptide"
                 width="300"
                 height="250"
                 className="w-full h-auto max-h-64 object-contain group-hover:scale-105 transition-transform duration-300"
@@ -84,9 +78,7 @@ export default function() {
             <div className="overflow-hidden rounded-lg mb-4 bg-gray-50">
               <img
                 src="/img/l4.png"
-                alt="Beauty Peptide Product 4"
-                loading="lazy"
-                decoding="async"
+                alt="Semaglu Peptide"
                 width="300"
                 height="250"
                 className="w-full h-auto max-h-64 object-contain group-hover:scale-105 transition-transform duration-300"
