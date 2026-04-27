@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Products() {
-  // 从浏览器地址栏直接拿参数，不依赖 useSearchParams
+  // 初始分类（兼容服务端渲染）
   const getInitialCategory = () => {
     if (typeof window === 'undefined') return 'ghk-cu';
     const params = new URLSearchParams(window.location.search);
@@ -43,6 +43,11 @@ export default function Products() {
 
   const filtered = products.filter(p => p.category === activeCategory);
 
+  // 👇 关键修复：用函数式更新，保证状态一定变
+  const handleCategoryChange = (catId) => {
+    setActiveCategory(() => catId);
+  };
+
   return (
     <main className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
@@ -55,6 +60,7 @@ export default function Products() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 py-12">
+        {/* 👇 按钮区：加了 touch-manipulation，解决移动端点击无效 */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {[
             { id: 'ghk-cu', name: 'GHK-CU' },
@@ -64,8 +70,8 @@ export default function Products() {
           ].map(cat => (
             <button
               key={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
-              className={`px-6 py-3 rounded-full text-sm font-medium transition-all ${
+              onClick={() => handleCategoryChange(cat.id)}
+              className={`px-6 py-3 rounded-full text-sm font-medium transition-all touch-manipulation ${
                 activeCategory === cat.id ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 shadow hover:shadow-md'
               }`}
             >
