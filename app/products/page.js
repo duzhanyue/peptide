@@ -1,17 +1,16 @@
 'use client'
 import Link from 'next/link';
-import { useState, useEffect, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useState } from 'react';
 
-// 只在 Suspense 内部使用 useSearchParams()
-function ProductsContent() {
-  const searchParams = useSearchParams();
-  const [activeCategory, setActiveCategory] = useState('ghk-cu');
+export default function Products() {
+  // 从浏览器地址栏直接拿参数，不依赖 useSearchParams
+  const getInitialCategory = () => {
+    if (typeof window === 'undefined') return 'ghk-cu';
+    const params = new URLSearchParams(window.location.search);
+    return params.get('category') || 'ghk-cu';
+  };
 
-  useEffect(() => {
-    const cat = searchParams.get('category');
-    if (cat) setActiveCategory(cat);
-  }, [searchParams]);
+  const [activeCategory, setActiveCategory] = useState(getInitialCategory());
 
   const products = [
     { id: 2, title: 'GHK-CU 50mg', purity: '99% Purity', image: '/img/l1.png', category: 'ghk-cu' },
@@ -45,7 +44,7 @@ function ProductsContent() {
   const filtered = products.filter(p => p.category === activeCategory);
 
   return (
-    <>
+    <main className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/img/p1.png')" }} />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-blue-900/50" />
@@ -82,8 +81,6 @@ function ProductsContent() {
                 <img 
                   src={item.image} 
                   alt={item.title}
-                  loading="lazy"
-                  decoding="async"
                   width="200"
                   height="200"
                   className="w-auto h-full max-h-[200px] object-contain group-hover:scale-105 transition-transform duration-500" 
@@ -113,21 +110,6 @@ function ProductsContent() {
         <p className="text-blue-100 mb-8 max-w-2xl mx-auto">We provide high-quality peptides and custom synthesis services for global customers.</p>
         <Link href="/contact" className="bg-white text-blue-700 font-medium px-8 py-3 rounded-full hover:bg-gray-100 transition">Contact Us Now</Link>
       </section>
-    </>
-  );
-}
-
-// 最外层必须包 Suspense，Next.js 16 强制要求
-export default function Products() {
-  return (
-    <main className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      <Suspense fallback={
-        <div className="min-h-screen flex items-center justify-center text-gray-500">
-          Loading...
-        </div>
-      }>
-        <ProductsContent />
-      </Suspense>
     </main>
   );
 }
