@@ -1,26 +1,16 @@
 'use client'
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-export default function Products() {
+// 只在 Suspense 内部使用 useSearchParams()
+function ProductsContent() {
   const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState('ghk-cu');
-  const [isLoading, setIsLoading] = useState(true);
 
-  // 读取 URL 分类
   useEffect(() => {
-    try {
-      const cat = searchParams?.get('category');
-      if (cat) {
-        setActiveCategory(cat);
-      }
-    } catch (e) {}
-
-    // 200ms 后关闭 loading，避免手机端卡死
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 200);
+    const cat = searchParams.get('category');
+    if (cat) setActiveCategory(cat);
   }, [searchParams]);
 
   const products = [
@@ -54,17 +44,8 @@ export default function Products() {
 
   const filtered = products.filter(p => p.category === activeCategory);
 
-  // 加载中
-  if (isLoading) {
-    return (
-      <main className="pt-20 min-h-screen flex items-center justify-center text-gray-500">
-        Loading...
-      </main>
-    );
-  }
-
   return (
-    <main className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <>
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/img/p1.png')" }} />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-blue-900/50" />
@@ -127,11 +108,26 @@ export default function Products() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-blue-800 to-blue-600 py-16 text-white text-center mt-16">
+      <section className="bg-gradient-to-r from-blue-800 to-blue-600 py-16 text-center text-white mt-16">
         <h2 className="text-3xl font-bold mb-4">Need Custom Peptide Solutions?</h2>
         <p className="text-blue-100 mb-8 max-w-2xl mx-auto">We provide high-quality peptides and custom synthesis services for global customers.</p>
         <Link href="/contact" className="bg-white text-blue-700 font-medium px-8 py-3 rounded-full hover:bg-gray-100 transition">Contact Us Now</Link>
       </section>
+    </>
+  );
+}
+
+// 最外层必须包 Suspense，Next.js 16 强制要求
+export default function Products() {
+  return (
+    <main className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <Suspense fallback={
+        <div className="min-h-screen flex items-center justify-center text-gray-500">
+          Loading...
+        </div>
+      }>
+        <ProductsContent />
+      </Suspense>
     </main>
   );
 }
