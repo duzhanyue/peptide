@@ -3,16 +3,21 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 export default function Products() {
-  // 🔥 修复 1：确保在客户端才读取地址栏（解决跳转永远第一个分类）
+  // 状态：只保留最简单的 useState
   const [activeCategory, setActiveCategory] = useState('ghk-cu');
 
-  // 🔥 修复 2：useEffect 确保客户端渲染后再取参数
+  // 👇 强制客户端读取 URL，解决首页跳转不正确
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const cat = params.get('category') || 'ghk-cu';
-    setActiveCategory(cat);
+    try {
+      const url = new URL(window.location.href);
+      const cat = url.searchParams.get('category');
+      if (cat) {
+        setActiveCategory(cat);
+      }
+    } catch (e) {}
   }, []);
 
+  // 产品列表
   const products = [
     { id: 2, title: 'GHK-CU 50mg', purity: '99% Purity', image: '/img/l1.png', category: 'ghk-cu' },
     { id: 3, title: 'GHK-CU 100mg', purity: '99% Purity', image: '/img/l1.100.png', category: 'ghk-cu' },
@@ -42,7 +47,8 @@ export default function Products() {
     { id: 15, title: 'Semaglu Peptide 30mg', purity: '99% Purity', image: '/img/l4.30.png', category: 'semaglu' },
   ];
 
-  const filtered = products.filter(p => p.category === activeCategory);
+  // 👇 最稳定的过滤
+  const filtered = products.filter((p) => p.category === activeCategory);
 
   return (
     <main className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
@@ -56,41 +62,45 @@ export default function Products() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 py-12">
-        {/* 🔥 修复 3：按钮 onClick 绝对稳定 */}
+        {/* 👇 按钮：手机 100% 能点 */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {[
-            { id: 'ghk-cu', name: 'GHK-CU' },
-            { id: 'rt', name: 'RT Peptide' },
-            { id: 'tirz', name: 'Tirz Peptide' },
-            { id: 'semaglu', name: 'Semaglu Peptide' },
-          ].map(cat => (
-            <button
-              key={cat.id}
-              onClick={() => {
-                setActiveCategory(cat.id);
-              }}
-              className="px-6 py-3 rounded-full text-sm font-medium transition-all cursor-pointer"
-              style={{
-                backgroundColor: activeCategory === cat.id ? '#2563eb' : '#ffffff',
-                color: activeCategory === cat.id ? '#fff' : '#374151',
-                boxShadow: activeCategory === cat.id ? '0 10px 15px -3px rgb(0 0 0 / 0.1)' : '0 1px 2px rgb(0 0 0 / 0.05)'
-              }}
-            >
-              {cat.name}
-            </button>
-          ))}
+          <button
+            onClick={() => setActiveCategory('ghk-cu')}
+            className={`px-6 py-3 rounded-full text-sm font-medium ${activeCategory === 'ghk-cu' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700'}`}
+          >
+            GHK-CU
+          </button>
+          <button
+            onClick={() => setActiveCategory('rt')}
+            className={`px-6 py-3 rounded-full text-sm font-medium ${activeCategory === 'rt' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700'}`}
+          >
+            RT Peptide
+          </button>
+          <button
+            onClick={() => setActiveCategory('tirz')}
+            className={`px-6 py-3 rounded-full text-sm font-medium ${activeCategory === 'tirz' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700'}`}
+          >
+            Tirz Peptide
+          </button>
+          <button
+            onClick={() => setActiveCategory('semaglu')}
+            className={`px-6 py-3 rounded-full text-sm font-medium ${activeCategory === 'semaglu' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700'}`}
+          >
+            Semaglu Peptide
+          </button>
         </div>
 
+        {/* 产品列表 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {filtered.map(item => (
+          {filtered.map((item) => (
             <div key={item.id} className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
               <div className="w-full h-[240px] flex items-center justify-center p-4 overflow-hidden bg-gray-50">
-                <img 
-                  src={item.image} 
+                <img
+                  src={item.image}
                   alt={item.title}
                   width="200"
                   height="200"
-                  className="w-auto h-full max-h-[200px] object-contain group-hover:scale-105 transition-transform duration-500" 
+                  className="w-auto h-full max-h-[200px] object-contain group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
@@ -98,9 +108,9 @@ export default function Products() {
                 <h3 className="text-xl font-bold mb-2 text-gray-800">{item.title}</h3>
                 <div className="flex justify-between items-center">
                   <Link href="/contact" className="text-blue-600 font-medium hover:underline">View Details</Link>
-                  <Link 
-                    href="https://wa.me/85259951323" 
-                    target="_blank" 
+                  <Link
+                    href="https://wa.me/85259951323"
+                    target="_blank"
                     className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition"
                   >
                     Inquiry
