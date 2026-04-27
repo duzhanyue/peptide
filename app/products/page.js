@@ -1,16 +1,11 @@
 'use client'
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-export default function Products() {
-  const [activeCategory, setActiveCategory] = useState('ghk-cu');
-
-  useEffect(() => {
-    const query = window.location.search;
-    const urlParams = new URLSearchParams(query);
-    const category = urlParams.get('category') || 'ghk-cu';
-    setActiveCategory(category);
-  }, []);
+export default function Products({ searchParams }) {
+  // 服务端获取分类，纯 JS 语法，不报错
+  const defaultCategory = (searchParams && searchParams.category) || 'ghk-cu';
+  const [activeCategory, setActiveCategory] = useState(defaultCategory);
 
   const products = [
     { id: 2, title: 'GHK-CU 50mg', purity: '99% Purity', image: '/img/l1.png', category: 'ghk-cu' },
@@ -41,12 +36,7 @@ export default function Products() {
     { id: 15, title: 'Semaglu Peptide 30mg', purity: '99% Purity', image: '/img/l4.30.png', category: 'semaglu' },
   ];
 
-  const filtered = products.filter((p) => p.category === activeCategory);
-
-  // 统一处理切换（同时支持 click + touch）
-  const switchCategory = (cat) => {
-    setActiveCategory(cat);
-  };
+  const filtered = products.filter(p => p.category === activeCategory);
 
   return (
     <main className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
@@ -60,89 +50,46 @@ export default function Products() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 py-12">
-        {/* 手机端能点的按钮区（关键修改在这里） */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          <div
-            role="button"
-            tabIndex={0}
-            onClick={() => switchCategory('ghk-cu')}
-            onTouchStart={(e) => {
-              e.preventDefault();
-              switchCategory('ghk-cu');
-            }}
-            className={`px-6 py-4 rounded-full text-sm font-medium cursor-pointer select-none ${
-              activeCategory === 'ghk-cu' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 shadow hover:shadow-md'
-            }`}
-          >
-            GHK-CU
-          </div>
-
-          <div
-            role="button"
-            tabIndex={0}
-            onClick={() => switchCategory('rt')}
-            onTouchStart={(e) => {
-              e.preventDefault();
-              switchCategory('rt');
-            }}
-            className={`px-6 py-4 rounded-full text-sm font-medium cursor-pointer select-none ${
-              activeCategory === 'rt' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 shadow hover:shadow-md'
-            }`}
-          >
-            RT Peptide
-          </div>
-
-          <div
-            role="button"
-            tabIndex={0}
-            onClick={() => switchCategory('tirz')}
-            onTouchStart={(e) => {
-              e.preventDefault();
-              switchCategory('tirz');
-            }}
-            className={`px-6 py-4 rounded-full text-sm font-medium cursor-pointer select-none ${
-              activeCategory === 'tirz' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 shadow hover:shadow-md'
-            }`}
-          >
-            Tirz Peptide
-          </div>
-
-          <div
-            role="button"
-            tabIndex={0}
-            onClick={() => switchCategory('semaglu')}
-            onTouchStart={(e) => {
-              e.preventDefault();
-              switchCategory('semaglu');
-            }}
-            className={`px-6 py-4 rounded-full text-sm font-medium cursor-pointer select-none ${
-              activeCategory === 'semaglu' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 shadow hover:shadow-md'
-            }`}
-          >
-            Semaglu Peptide
-          </div>
+          {[
+            { id: 'ghk-cu', name: 'GHK-CU' },
+            { id: 'rt', name: 'RT Peptide' },
+            { id: 'tirz', name: 'Tirz Peptide' },
+            { id: 'semaglu', name: 'Semaglu Peptide' },
+          ].map(cat => (
+            <button
+              key={cat.id}
+              onClick={() => setActiveCategory(cat.id)}
+              className={`px-6 py-3 rounded-full text-sm font-medium transition-all ${
+                activeCategory === cat.id ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 shadow hover:shadow-md'
+              }`}
+            >
+              {cat.name}
+            </button>
+          ))}
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {filtered.map((item) => (
+          {filtered.map(item => (
             <div key={item.id} className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
               <div className="w-full h-[240px] flex items-center justify-center p-4 overflow-hidden bg-gray-50">
-                <img
-                  src={item.image}
+                <img 
+                  src={item.image} 
                   alt={item.title}
                   width="200"
                   height="200"
-                  className="w-auto h-full max-h-[200px] object-contain group-hover:scale-105 transition-transform duration-500"
+                  className="w-auto h-full max-h-[200px] object-contain group-hover:scale-105 transition-transform duration-500" 
                 />
               </div>
+
               <div className="p-6">
                 <div className="text-xs text-blue-600 font-semibold mb-1">{item.purity}</div>
                 <h3 className="text-xl font-bold mb-2 text-gray-800">{item.title}</h3>
                 <div className="flex justify-between items-center">
                   <Link href="/contact" className="text-blue-600 font-medium hover:underline">View Details</Link>
-                  <Link
-                    href="https://wa.me/85259951323"
-                    target="_blank"
+                  <Link 
+                    href="https://wa.me/85259951323" 
+                    target="_blank" 
                     className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition"
                   >
                     Inquiry
@@ -154,7 +101,7 @@ export default function Products() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-blue-800 to-blue-600 py-16 text-center text-white mt-16">
+      <section className="bg-gradient-to-r from-blue-800 to-blue-600 py-16 text-center mt-16 text-white">
         <h2 className="text-3xl font-bold mb-4">Need Custom Peptide Solutions?</h2>
         <p className="text-blue-100 mb-8 max-w-2xl mx-auto">We provide high-quality peptides and custom synthesis services for global customers.</p>
         <Link href="/contact" className="bg-white text-blue-700 font-medium px-8 py-3 rounded-full hover:bg-gray-100 transition">Contact Us Now</Link>
