@@ -1,16 +1,17 @@
 'use client'
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Products() {
-  // 初始分类（兼容服务端渲染）
-  const getInitialCategory = () => {
-    if (typeof window === 'undefined') return 'ghk-cu';
-    const params = new URLSearchParams(window.location.search);
-    return params.get('category') || 'ghk-cu';
-  };
+  // 🔥 修复 1：确保在客户端才读取地址栏（解决跳转永远第一个分类）
+  const [activeCategory, setActiveCategory] = useState('ghk-cu');
 
-  const [activeCategory, setActiveCategory] = useState(getInitialCategory());
+  // 🔥 修复 2：useEffect 确保客户端渲染后再取参数
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('category') || 'ghk-cu';
+    setActiveCategory(cat);
+  }, []);
 
   const products = [
     { id: 2, title: 'GHK-CU 50mg', purity: '99% Purity', image: '/img/l1.png', category: 'ghk-cu' },
@@ -43,11 +44,6 @@ export default function Products() {
 
   const filtered = products.filter(p => p.category === activeCategory);
 
-  // 👇 关键修复：用函数式更新，保证状态一定变
-  const handleCategoryChange = (catId) => {
-    setActiveCategory(() => catId);
-  };
-
   return (
     <main className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
@@ -60,7 +56,7 @@ export default function Products() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 py-12">
-        {/* 👇 按钮区：加了 touch-manipulation，解决移动端点击无效 */}
+        {/* 🔥 修复 3：按钮 onClick 绝对稳定 */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {[
             { id: 'ghk-cu', name: 'GHK-CU' },
@@ -70,10 +66,15 @@ export default function Products() {
           ].map(cat => (
             <button
               key={cat.id}
-              onClick={() => handleCategoryChange(cat.id)}
-              className={`px-6 py-3 rounded-full text-sm font-medium transition-all touch-manipulation ${
-                activeCategory === cat.id ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 shadow hover:shadow-md'
-              }`}
+              onClick={() => {
+                setActiveCategory(cat.id);
+              }}
+              className="px-6 py-3 rounded-full text-sm font-medium transition-all cursor-pointer"
+              style={{
+                backgroundColor: activeCategory === cat.id ? '#2563eb' : '#ffffff',
+                color: activeCategory === cat.id ? '#fff' : '#374151',
+                boxShadow: activeCategory === cat.id ? '0 10px 15px -3px rgb(0 0 0 / 0.1)' : '0 1px 2px rgb(0 0 0 / 0.05)'
+              }}
             >
               {cat.name}
             </button>
