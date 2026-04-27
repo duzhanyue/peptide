@@ -3,21 +3,15 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 export default function Products() {
-  // 状态：只保留最简单的 useState
   const [activeCategory, setActiveCategory] = useState('ghk-cu');
 
-  // 👇 强制客户端读取 URL，解决首页跳转不正确
   useEffect(() => {
-    try {
-      const url = new URL(window.location.href);
-      const cat = url.searchParams.get('category');
-      if (cat) {
-        setActiveCategory(cat);
-      }
-    } catch (e) {}
+    const query = window.location.search;
+    const urlParams = new URLSearchParams(query);
+    const category = urlParams.get('category') || 'ghk-cu';
+    setActiveCategory(category);
   }, []);
 
-  // 产品列表
   const products = [
     { id: 2, title: 'GHK-CU 50mg', purity: '99% Purity', image: '/img/l1.png', category: 'ghk-cu' },
     { id: 3, title: 'GHK-CU 100mg', purity: '99% Purity', image: '/img/l1.100.png', category: 'ghk-cu' },
@@ -47,8 +41,12 @@ export default function Products() {
     { id: 15, title: 'Semaglu Peptide 30mg', purity: '99% Purity', image: '/img/l4.30.png', category: 'semaglu' },
   ];
 
-  // 👇 最稳定的过滤
   const filtered = products.filter((p) => p.category === activeCategory);
+
+  // 统一处理切换（同时支持 click + touch）
+  const switchCategory = (cat) => {
+    setActiveCategory(cat);
+  };
 
   return (
     <main className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
@@ -62,35 +60,69 @@ export default function Products() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 py-12">
-        {/* 👇 按钮：手机 100% 能点 */}
+        {/* 手机端能点的按钮区（关键修改在这里） */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          <button
-            onClick={() => setActiveCategory('ghk-cu')}
-            className={`px-6 py-3 rounded-full text-sm font-medium ${activeCategory === 'ghk-cu' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700'}`}
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={() => switchCategory('ghk-cu')}
+            onTouchStart={(e) => {
+              e.preventDefault();
+              switchCategory('ghk-cu');
+            }}
+            className={`px-6 py-4 rounded-full text-sm font-medium cursor-pointer select-none ${
+              activeCategory === 'ghk-cu' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 shadow hover:shadow-md'
+            }`}
           >
             GHK-CU
-          </button>
-          <button
-            onClick={() => setActiveCategory('rt')}
-            className={`px-6 py-3 rounded-full text-sm font-medium ${activeCategory === 'rt' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700'}`}
+          </div>
+
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={() => switchCategory('rt')}
+            onTouchStart={(e) => {
+              e.preventDefault();
+              switchCategory('rt');
+            }}
+            className={`px-6 py-4 rounded-full text-sm font-medium cursor-pointer select-none ${
+              activeCategory === 'rt' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 shadow hover:shadow-md'
+            }`}
           >
             RT Peptide
-          </button>
-          <button
-            onClick={() => setActiveCategory('tirz')}
-            className={`px-6 py-3 rounded-full text-sm font-medium ${activeCategory === 'tirz' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700'}`}
+          </div>
+
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={() => switchCategory('tirz')}
+            onTouchStart={(e) => {
+              e.preventDefault();
+              switchCategory('tirz');
+            }}
+            className={`px-6 py-4 rounded-full text-sm font-medium cursor-pointer select-none ${
+              activeCategory === 'tirz' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 shadow hover:shadow-md'
+            }`}
           >
             Tirz Peptide
-          </button>
-          <button
-            onClick={() => setActiveCategory('semaglu')}
-            className={`px-6 py-3 rounded-full text-sm font-medium ${activeCategory === 'semaglu' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700'}`}
+          </div>
+
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={() => switchCategory('semaglu')}
+            onTouchStart={(e) => {
+              e.preventDefault();
+              switchCategory('semaglu');
+            }}
+            className={`px-6 py-4 rounded-full text-sm font-medium cursor-pointer select-none ${
+              activeCategory === 'semaglu' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 shadow hover:shadow-md'
+            }`}
           >
             Semaglu Peptide
-          </button>
+          </div>
         </div>
 
-        {/* 产品列表 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {filtered.map((item) => (
             <div key={item.id} className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
