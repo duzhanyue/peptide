@@ -12,19 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WT4T2J8L');`,
-          }}
-        />
-        {/* End Google Tag Manager */}
-
-        {/* Google tag (gtag.js) */}
+        {/* 1. Google tag (gtag.js) —— 官方要求：紧跟在 <head> 之后第一行 */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-RDQZCFLL5N"></script>
         <script
           dangerouslySetInnerHTML={{
@@ -36,10 +24,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             `,
           }}
         />
+
+        {/* 2. Google Tag Manager —— 放在 gtag 之后 */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WT4T2J8L');`,
+          }}
+        />
+        {/* End Google Tag Manager */}
       </head>
 
       <body className="bg-white text-gray-900 antialiased">
-        {/* Google Tag Manager (noscript) */}
+        {/* 3. Google Tag Manager (noscript) —— 官方要求：body 后第一行 */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-WT4T2J8L"
