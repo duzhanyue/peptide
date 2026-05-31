@@ -1,164 +1,117 @@
-'use client'
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import Image from 'next/image'
+import Link from 'next/link'
+
+const categories = [
+  { key: 'ghk-cu', label: 'GHK-CU', description: 'Copper peptide' },
+  { key: 'rt', label: 'RT Peptide', description: 'Research peptide' },
+  { key: 'tirz', label: 'Tirz Peptide', description: 'Research peptide' },
+  { key: 'semaglu', label: 'Semaglu Peptide', description: 'Research peptide' },
+]
+
+const products = [
+  ['GHK-CU 50mg', '/img/l1.png', 'ghk-cu'], ['GHK-CU 100mg', '/img/l1.100.png', 'ghk-cu'],
+  ['RT Peptide 5mg', '/img/l2.5.png', 'rt'], ['RT Peptide 10mg', '/img/l2.10.png', 'rt'], ['RT Peptide 15mg', '/img/l2.15.png', 'rt'], ['RT Peptide 20mg', '/img/l2.20.png', 'rt'], ['RT Peptide 30mg', '/img/l2.30.png', 'rt'], ['RT Peptide 40mg', '/img/l2.40.png', 'rt'], ['RT Peptide 50mg', '/img/l2.50.png', 'rt'], ['RT Peptide 60mg', '/img/l2.png', 'rt'],
+  ['Tirz Peptide 5mg', '/img/l3.5.png', 'tirz'], ['Tirz Peptide 10mg', '/img/l3.10.png', 'tirz'], ['Tirz Peptide 15mg', '/img/l3.15.png', 'tirz'], ['Tirz Peptide 20mg', '/img/l3.20.png', 'tirz'], ['Tirz Peptide 30mg', '/img/l3.png', 'tirz'], ['Tirz Peptide 40mg', '/img/l3.40.png', 'tirz'], ['Tirz Peptide 50mg', '/img/l3.50.png', 'tirz'], ['Tirz Peptide 60mg', '/img/l3.60.png', 'tirz'], ['Tirz Peptide 100mg', '/img/l3.100.png', 'tirz'], ['Tirz Peptide 120mg', '/img/l3.120.png', 'tirz'],
+  ['Semaglu Peptide 2mg', '/img/l4.22.png', 'semaglu'], ['Semaglu Peptide 5mg', '/img/l4.1.png', 'semaglu'], ['Semaglu Peptide 10mg', '/img/l4.png', 'semaglu'], ['Semaglu Peptide 15mg', '/img/l4.15.png', 'semaglu'], ['Semaglu Peptide 20mg', '/img/l4.2.png', 'semaglu'], ['Semaglu Peptide 30mg', '/img/l4.30.png', 'semaglu'],
+].map(([title, image, category], index) => ({ id: index + 1, title, image, category }))
 
 export default function Products() {
-  const [activeCategory, setActiveCategory] = useState('ghk-cu');
-
-  useEffect(() => {
-    const query = window.location.search;
-    const urlParams = new URLSearchParams(query);
-    const category = urlParams.get('category') || 'ghk-cu';
-    setActiveCategory(category);
-  }, []);
-
-  const products = [
-    { id: 2, title: 'GHK-CU 50mg', purity: '99% Purity', image: '/img/l1.png', category: 'ghk-cu' },
-    { id: 3, title: 'GHK-CU 100mg', purity: '99% Purity', image: '/img/l1.100.png', category: 'ghk-cu' },
-    { id: 4, title: 'RT Peptide 5mg', purity: '99% Purity', image: '/img/l2.5.png', category: 'rt' },
-    { id: 5, title: 'RT Peptide 10mg', purity: '99% Purity', image: '/img/l2.10.png', category: 'rt' },
-    { id: 6, title: 'RT Peptide 15mg', purity: '99% Purity', image: '/img/l2.15.png', category: 'rt' },
-    { id: 61, title: 'RT Peptide 20mg', purity: '99% Purity', image: '/img/l2.20.png', category: 'rt' },
-    { id: 62, title: 'RT Peptide 30mg', purity: '99% Purity', image: '/img/l2.30.png', category: 'rt' },
-    { id: 63, title: 'RT Peptide 40mg', purity: '99% Purity', image: '/img/l2.40.png', category: 'rt' },
-    { id: 64, title: 'RT Peptide 50mg', purity: '99% Purity', image: '/img/l2.50.png', category: 'rt' },
-    { id: 65, title: 'RT Peptide 60mg', purity: '99% Purity', image: '/img/l2.png', category: 'rt' },
-    { id: 7, title: 'Tirz Peptide 5mg', purity: '99% Purity', image: '/img/l3.5.png', category: 'tirz' },
-    { id: 8, title: 'Tirz Peptide 10mg', purity: '99% Purity', image: '/img/l3.10.png', category: 'tirz' },
-    { id: 9, title: 'Tirz Peptide 15mg', purity: '99% Purity', image: '/img/l3.15.png', category: 'tirz' },
-    { id: 91, title: 'Tirz Peptide 20mg', purity: '99% Purity', image: '/img/l3.20.png', category: 'tirz' },
-    { id: 92, title: 'Tirz Peptide 30mg', purity: '99% Purity', image: '/img/l3.png', category: 'tirz' },
-    { id: 93, title: 'Tirz Peptide 40mg', purity: '99% Purity', image: '/img/l3.40.png', category: 'tirz' },
-    { id: 94, title: 'Tirz Peptide 50mg', purity: '99% Purity', image: '/img/l3.50.png', category: 'tirz' },
-    { id: 95, title: 'Tirz Peptide 60mg', purity: '99% Purity', image: '/img/l3.60.png', category: 'tirz' },
-    { id: 96, title: 'Tirz Peptide 100mg', purity: '99% Purity', image: '/img/l3.100.png', category: 'tirz' },
-    { id: 97, title: 'Tirz Peptide 120mg', purity: '99% Purity', image: '/img/l3.120.png', category: 'tirz' },
-    { id: 10, title: 'Semaglu Peptide 2mg', purity: '99% Purity', image: '/img/l4.22.png', category: 'semaglu' },
-    { id: 11, title: 'Semaglu Peptide 5mg', purity: '99% Purity', image: '/img/l4.1.png', category: 'semaglu' },
-    { id: 12, title: 'Semaglu Peptide 10mg', purity: '99% Purity', image: '/img/l4.png', category: 'semaglu' },
-    { id: 13, title: 'Semaglu Peptide 15mg', purity: '99% Purity', image: '/img/l4.15.png', category: 'semaglu' },
-    { id: 14, title: 'Semaglu Peptide 20mg', purity: '99% Purity', image: '/img/l4.2.png', category: 'semaglu' },
-    { id: 15, title: 'Semaglu Peptide 30mg', purity: '99% Purity', image: '/img/l4.30.png', category: 'semaglu' },
-  ];
-
-  const filtered = products.filter((p) => p.category === activeCategory);
-
-  // 统一处理切换（同时支持 click + touch）
-  const switchCategory = (cat) => {
-    setActiveCategory(cat);
-  };
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'MeiAn Peptide Research Peptide Catalogue',
+    description:
+      'Research-use peptide specifications available from MeiAn Peptide.',
+    url: 'https://www.meianpeptide.com/products',
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: products.map((product, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: product.title,
+        url: `https://www.meianpeptide.com/products#${product.category}`,
+      })),
+    },
+  }
 
   return (
-    <main className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/img/p1.png')" }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-blue-900/50" />
-        <div className="relative z-10 text-center px-4 text-white max-w-4xl">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Premium Peptide Products</h1>
-          <p className="text-lg md:text-xl text-gray-200">High-Purity, Safe, Effective Ingredients for Professional Use</p>
+    <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
+        }}
+      />
+      <section className="relative overflow-hidden bg-[#082b43] pt-20 text-white">
+        <Image src="/img/p1.png" alt="" fill priority className="object-cover opacity-45" sizes="100vw" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,38,59,0.98),rgba(5,38,59,0.62))]" />
+        <div className="blueprint-grid absolute inset-0 opacity-30" />
+        <div className="section-shell relative py-20 sm:py-24">
+          <p className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-[#98cee0]">Product Catalogue</p>
+          <h1 className="font-display mt-4 max-w-2xl text-5xl font-bold tracking-[-0.055em] sm:text-6xl">Research peptide specifications.</h1>
+          <p className="mt-5 max-w-xl text-sm leading-7 text-[#c8dee6]">Browse our available catalogue options, then contact our team to confirm specifications and batch-related documentation.</p>
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 py-12">
-        {/* 手机端能点的按钮区（关键修改在这里） */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          <div
-            role="button"
-            tabIndex={0}
-            onClick={() => switchCategory('ghk-cu')}
-            onTouchStart={(e) => {
-              e.preventDefault();
-              switchCategory('ghk-cu');
-            }}
-            className={`px-6 py-4 rounded-full text-sm font-medium cursor-pointer select-none ${
-              activeCategory === 'ghk-cu' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 shadow hover:shadow-md'
-            }`}
-          >
-            GHK-CU
-          </div>
-
-          <div
-            role="button"
-            tabIndex={0}
-            onClick={() => switchCategory('rt')}
-            onTouchStart={(e) => {
-              e.preventDefault();
-              switchCategory('rt');
-            }}
-            className={`px-6 py-4 rounded-full text-sm font-medium cursor-pointer select-none ${
-              activeCategory === 'rt' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 shadow hover:shadow-md'
-            }`}
-          >
-            RT Peptide
-          </div>
-
-          <div
-            role="button"
-            tabIndex={0}
-            onClick={() => switchCategory('tirz')}
-            onTouchStart={(e) => {
-              e.preventDefault();
-              switchCategory('tirz');
-            }}
-            className={`px-6 py-4 rounded-full text-sm font-medium cursor-pointer select-none ${
-              activeCategory === 'tirz' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 shadow hover:shadow-md'
-            }`}
-          >
-            Tirz Peptide
-          </div>
-
-          <div
-            role="button"
-            tabIndex={0}
-            onClick={() => switchCategory('semaglu')}
-            onTouchStart={(e) => {
-              e.preventDefault();
-              switchCategory('semaglu');
-            }}
-            className={`px-6 py-4 rounded-full text-sm font-medium cursor-pointer select-none ${
-              activeCategory === 'semaglu' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 shadow hover:shadow-md'
-            }`}
-          >
-            Semaglu Peptide
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {filtered.map((item) => (
-            <div key={item.id} className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="w-full h-[240px] flex items-center justify-center p-4 overflow-hidden bg-gray-50">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  width="200"
-                  height="200"
-                  className="w-auto h-full max-h-[200px] object-contain group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6">
-                <div className="text-xs text-blue-600 font-semibold mb-1">{item.purity}</div>
-                <h3 className="text-xl font-bold mb-2 text-gray-800">{item.title}</h3>
-                <div className="flex justify-between items-center">
-                  <Link href="/contact" className="text-blue-600 font-medium hover:underline">View Details</Link>
-                  <Link
-                    href="https://wa.me/85259951323"
-                    target="_blank"
-                    className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition"
-                  >
-                    Inquiry
-                  </Link>
-                </div>
-              </div>
-            </div>
+      <section className="section-shell py-16 sm:py-20">
+        <div className="flex flex-wrap gap-3">
+          {categories.map((category) => (
+            <a
+              key={category.key}
+              href={`#${category.key}`}
+              className="focus-ring rounded-full border border-[#cfdee4] bg-white px-5 py-3 text-xs font-bold text-[#506474] transition hover:border-[#0c5f8d] hover:text-[#0c5f8d]"
+            >
+              {category.label}
+            </a>
           ))}
         </div>
+
+        {categories.map((category) => {
+          const categoryProducts = products.filter((product) => product.category === category.key)
+
+          return (
+            <section key={category.key} id={category.key} className="scroll-mt-28 pt-14">
+              <div className="flex flex-col gap-3 border-b border-[#dce5ea] pb-5 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="eyebrow">{category.description}</p>
+                  <h2 className="font-display mt-2 text-4xl font-bold tracking-[-0.04em] text-[#10253b]">{category.label}</h2>
+                </div>
+                <p className="text-sm text-[#607080]">{categoryProducts.length} available specifications</p>
+              </div>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {categoryProducts.map((product) => (
+                  <article key={product.id} className="group soft-card overflow-hidden rounded-[1.4rem] transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(8,55,84,0.14)]">
+                    <div className="flex h-64 items-center justify-center bg-[linear-gradient(145deg,#f7fbfc,#e7f1f4)] p-6">
+                      <Image src={product.image} alt={`${product.title} research peptide specification`} width={210} height={270} className="product-shadow h-full w-auto object-contain transition duration-500 group-hover:scale-105" />
+                    </div>
+                    <div className="border-t border-[#e0eaee] p-5">
+                      <p className="text-[0.6rem] font-bold uppercase tracking-[0.14em] text-[#0c5f8d]">Documentation available on request</p>
+                      <h3 className="font-display mt-2 text-xl font-bold tracking-[-0.03em] text-[#10253b]">{product.title}</h3>
+                      <p className="mt-2 text-xs leading-5 text-[#71808d]">Research use only. Not for human consumption.</p>
+                      <Link href="/contact" className="focus-ring mt-5 block rounded-full bg-[#073754] px-4 py-3 text-center text-[0.64rem] font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#0c5f8d]">
+                        Request Quote
+                      </Link>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+          )
+        })}
       </section>
 
-      <section className="bg-gradient-to-r from-blue-800 to-blue-600 py-16 text-center text-white mt-16">
-        <h2 className="text-3xl font-bold mb-4">Need Custom Peptide Solutions?</h2>
-        <p className="text-blue-100 mb-8 max-w-2xl mx-auto">We provide high-quality peptides and custom synthesis services for global customers.</p>
-        <Link href="/contact" className="bg-white text-blue-700 font-medium px-8 py-3 rounded-full hover:bg-gray-100 transition">Contact Us Now</Link>
+      <section className="bg-[#eaf2f4] py-14">
+        <div className="section-shell flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <h2 className="font-display text-3xl font-bold tracking-[-0.04em] text-[#10253b]">Need help selecting a specification?</h2>
+            <p className="mt-2 text-sm leading-6 text-[#607080]">Send us your target product and quantity for a focused response.</p>
+          </div>
+          <Link href="/contact" className="focus-ring shrink-0 rounded-full bg-[#073754] px-6 py-4 text-center text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#0c5f8d]">
+            Contact Inquiry Team
+          </Link>
+        </div>
       </section>
     </main>
-  );
+  )
 }
