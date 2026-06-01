@@ -48,7 +48,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         name: 'MeiAn Peptide',
         url: 'https://www.meianpeptide.com',
         logo: 'https://www.meianpeptide.com/img/logo.png',
+        description:
+          'A China-based peptide factory website with research-use catalogue pages, sourcing inquiry support, and procurement guides.',
         email: 'mailto:zzz19182026@outlook.com',
+        knowsAbout: [
+          'Research peptide catalogue',
+          'Peptide specification review',
+          'Batch-related documentation inquiries',
+          'Research procurement inquiries',
+          'China peptide factory sourcing',
+        ],
         contactPoint: {
           '@type': 'ContactPoint',
           telephone: '+852-5995-1323',
@@ -61,13 +70,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         '@id': 'https://www.meianpeptide.com/#website',
         url: 'https://www.meianpeptide.com',
         name: 'MeiAn Peptide',
+        description:
+          'Research-use peptide catalogue pages, inquiry support, and procurement guides.',
+        inLanguage: 'en',
         publisher: { '@id': 'https://www.meianpeptide.com/#organization' },
       },
     ],
   }
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
         <script
           type="application/ld+json"

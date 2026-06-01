@@ -35,7 +35,7 @@ export default function About() {
           <p className="eyebrow">Our Approach</p>
           <h2 className="font-display mt-4 text-4xl font-bold leading-tight tracking-[-0.045em] text-[#10253b] sm:text-5xl">Make every procurement conversation more efficient.</h2>
           <p className="mt-6 text-sm leading-7 text-[#607080]">
-            MeiAn Peptide presents a focused portfolio for research and professional sourcing. Our goal is simple: help buyers identify a product, communicate the specification they need, and reach a sales contact without unnecessary friction.
+            MeiAn Peptide is a China-based peptide factory website presenting a focused portfolio for research and professional sourcing. Our goal is simple: help buyers identify a product, communicate the specification they need, and reach a sales contact without unnecessary friction.
           </p>
           <p className="mt-4 text-sm leading-7 text-[#607080]">
             From product discovery to quotation support, our website is designed for distributors, procurement teams, and research buyers who value a responsive and practical sourcing experience.
@@ -60,6 +60,25 @@ export default function About() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="section-shell py-16 sm:py-20">
+        <p className="eyebrow">Company Facts</p>
+        <h2 className="font-display mt-3 text-4xl font-bold tracking-[-0.045em] text-[#10253b] sm:text-5xl">A clear reference for sourcing inquiries.</h2>
+        <div className="mt-8 grid gap-px overflow-hidden rounded-[1.4rem] border border-[#d7e3e7] bg-[#d7e3e7] md:grid-cols-2">
+          {[
+            ['Website focus', 'China-based peptide factory catalogue and sourcing inquiry support.'],
+            ['Catalogue families', 'GHK-CU, RT Peptide, Tirz Peptide, and Semaglu Peptide.'],
+            ['Inquiry details', 'Product family, specification, quantity, destination, and documentation questions.'],
+            ['Contact options', 'WhatsApp and email are available from the contact page.'],
+          ].map(([title, text]) => (
+            <div key={title} className="bg-white p-6 sm:p-7">
+              <h3 className="font-display text-xl font-bold tracking-[-0.03em] text-[#10253b]">{title}</h3>
+              <p className="mt-3 text-sm leading-7 text-[#607080]">{text}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-5 text-xs font-bold uppercase tracking-[0.12em] text-[#7c929b]">Website information reviewed June 1, 2026</p>
       </section>
 
       <section className="section-shell grid gap-12 py-20 lg:grid-cols-[1fr_0.9fr] lg:items-center lg:py-24">

@@ -23,6 +23,7 @@ export default function Footer() {
             <Link href="/products" className="hover:text-white">Products</Link>
             <Link href="/about" className="hover:text-white">About</Link>
             <Link href="/news" className="hover:text-white">News</Link>
+            <Link href="/faq" className="hover:text-white">FAQ</Link>
             <Link href="/contact" className="hover:text-white">Contact</Link>
           </div>
         </div>
@@ -38,6 +39,7 @@ export default function Footer() {
         <div className="section-shell flex flex-col gap-2 py-5 text-xs text-[#8fb2c1] sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} MeiAn Peptide. All rights reserved.</p>
           <p>Laboratory research use only. Not for human consumption.</p>
+          <Link href="/llms.txt" className="hover:text-white">AI site summary</Link>
         </div>
       </div>
     </footer>

@@ -41,9 +41,33 @@ export default async function NewsPage({ searchParams }) {
   const categories = [...new Set(articles.map((article) => article.category))]
   const resultStart = archiveArticles.length === 0 ? 0 : startIndex + 1
   const resultEnd = Math.min(startIndex + ARTICLES_PER_PAGE, archiveArticles.length)
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'MeiAn Peptide Sourcing Guides',
+    url: 'https://www.meianpeptide.com/news',
+    description:
+      'Practical peptide sourcing guides, buyer resources, and product knowledge articles from MeiAn Peptide.',
+    isPartOf: { '@id': 'https://www.meianpeptide.com/#website' },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: articles.map((article, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: article.title,
+        url: `https://www.meianpeptide.com/news/${article.slug}`,
+      })),
+    },
+  }
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
+        }}
+      />
       <section className="blueprint-grid border-b border-[#dce5ea] bg-[#eef5f6] pt-20">
         <div className="section-shell grid gap-10 py-16 sm:py-20 lg:grid-cols-[1fr_0.65fr] lg:items-end">
           <div>

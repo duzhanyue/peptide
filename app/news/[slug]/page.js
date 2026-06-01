@@ -34,23 +34,36 @@ export default async function ArticlePage({ params }) {
   if (!article) notFound()
 
   const related = articles.filter((item) => item.slug !== article.slug).slice(0, 3)
+  const pageUrl = `https://www.meianpeptide.com/news/${article.slug}`
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: article.title,
-    description: article.description,
-    image: `https://www.meianpeptide.com${article.image}`,
-    datePublished: article.date,
-    dateModified: article.date,
-    author: {
-      '@type': 'Organization',
-      name: 'MeiAn Peptide',
-      url: 'https://www.meianpeptide.com',
-    },
-    publisher: {
-      '@id': 'https://www.meianpeptide.com/#organization',
-    },
-    mainEntityOfPage: `https://www.meianpeptide.com/news/${article.slug}`,
+    '@graph': [
+      {
+        '@type': 'Article',
+        '@id': `${pageUrl}#article`,
+        headline: article.title,
+        description: article.description,
+        image: `https://www.meianpeptide.com${article.image}`,
+        datePublished: article.date,
+        dateModified: article.date,
+        author: {
+          '@id': 'https://www.meianpeptide.com/#organization',
+        },
+        publisher: {
+          '@id': 'https://www.meianpeptide.com/#organization',
+        },
+        mainEntityOfPage: pageUrl,
+        isPartOf: { '@id': 'https://www.meianpeptide.com/#website' },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.meianpeptide.com' },
+          { '@type': 'ListItem', position: 2, name: 'News', item: 'https://www.meianpeptide.com/news' },
+          { '@type': 'ListItem', position: 3, name: article.title, item: pageUrl },
+        ],
+      },
+    ],
   }
 
   return (
@@ -66,7 +79,7 @@ export default async function ArticlePage({ params }) {
           <div className="section-shell max-w-5xl py-16 text-center sm:py-20">
             <p className="eyebrow">{article.category}</p>
             <h1 className="font-display mx-auto mt-4 max-w-4xl text-4xl font-bold leading-[1.08] tracking-[-0.05em] text-[#10253b] sm:text-6xl">{article.title}</h1>
-            <p className="mt-6 text-xs font-bold uppercase tracking-[0.14em] text-[#6c8491]">{formatArticleDate(article.date)} &middot; {article.readTime}</p>
+            <p className="mt-6 text-xs font-bold uppercase tracking-[0.14em] text-[#6c8491]">Published by MeiAn Peptide &middot; {formatArticleDate(article.date)} &middot; {article.readTime}</p>
           </div>
         </header>
 
@@ -95,6 +108,21 @@ export default async function ArticlePage({ params }) {
                 )}
               </section>
             ))}
+
+            {article.sources && (
+              <section className="mt-10 border-t border-[#dce5ea] pt-7">
+                <p className="eyebrow">Sources</p>
+                <ul className="mt-4 grid gap-3 text-sm leading-6 text-[#506474]">
+                  {article.sources.map((source) => (
+                    <li key={source.url}>
+                      <a href={source.url} target="_blank" rel="noopener noreferrer" className="font-bold text-[#0c5f8d] underline decoration-[#b8d3dd] underline-offset-4 hover:text-[#073754]">
+                        {source.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
 
             <div className="mt-12 rounded-[1.5rem] bg-[#073754] p-7 text-white sm:p-8">
               <p className="text-[0.64rem] font-bold uppercase tracking-[0.18em] text-[#9cc9dc]">Start a Conversation</p>

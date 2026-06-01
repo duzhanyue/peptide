@@ -12,11 +12,19 @@ export default function robots() {
         allow: '/',
       },
       {
-        userAgent: 'OAI-SearchBot',
+        userAgent: ['OAI-SearchBot', 'GPTBot', 'ChatGPT-User'],
         allow: '/',
       },
       {
-        userAgent: 'GPTBot',
+        userAgent: ['ClaudeBot', 'Claude-SearchBot', 'Claude-User'],
+        allow: '/',
+      },
+      {
+        userAgent: 'PerplexityBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'Google-Extended',
         allow: '/',
       },
     ],

@@ -1,8 +1,9 @@
 import { articles } from './news/articles'
+import { productFamilies } from './products/catalog'
 
 export default function sitemap() {
   const baseUrl = 'https://www.meianpeptide.com'
-  const pages = ['', '/products', '/about', '/contact', '/news']
+  const pages = ['', '/products', '/about', '/contact', '/faq', '/news']
 
   return [
     ...pages.map((path) => ({
@@ -18,6 +19,13 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.7,
       images: [`${baseUrl}${article.image}`],
+    })),
+    ...productFamilies.map((family) => ({
+      url: `${baseUrl}/products/${family.slug}`,
+      lastModified: new Date('2026-06-01T00:00:00'),
+      changeFrequency: 'weekly',
+      priority: 0.85,
+      images: [`${baseUrl}${family.image}`],
     })),
   ]
 }

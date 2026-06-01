@@ -1,19 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-
-const categories = [
-  { key: 'ghk-cu', label: 'GHK-CU', description: 'Copper peptide' },
-  { key: 'rt', label: 'RT Peptide', description: 'Research peptide' },
-  { key: 'tirz', label: 'Tirz Peptide', description: 'Research peptide' },
-  { key: 'semaglu', label: 'Semaglu Peptide', description: 'Research peptide' },
-]
-
-const products = [
-  ['GHK-CU 50mg', '/img/l1.png', 'ghk-cu'], ['GHK-CU 100mg', '/img/l1.100.png', 'ghk-cu'],
-  ['RT Peptide 5mg', '/img/l2.5.png', 'rt'], ['RT Peptide 10mg', '/img/l2.10.png', 'rt'], ['RT Peptide 15mg', '/img/l2.15.png', 'rt'], ['RT Peptide 20mg', '/img/l2.20.png', 'rt'], ['RT Peptide 30mg', '/img/l2.30.png', 'rt'], ['RT Peptide 40mg', '/img/l2.40.png', 'rt'], ['RT Peptide 50mg', '/img/l2.50.png', 'rt'], ['RT Peptide 60mg', '/img/l2.png', 'rt'],
-  ['Tirz Peptide 5mg', '/img/l3.5.png', 'tirz'], ['Tirz Peptide 10mg', '/img/l3.10.png', 'tirz'], ['Tirz Peptide 15mg', '/img/l3.15.png', 'tirz'], ['Tirz Peptide 20mg', '/img/l3.20.png', 'tirz'], ['Tirz Peptide 30mg', '/img/l3.png', 'tirz'], ['Tirz Peptide 40mg', '/img/l3.40.png', 'tirz'], ['Tirz Peptide 50mg', '/img/l3.50.png', 'tirz'], ['Tirz Peptide 60mg', '/img/l3.60.png', 'tirz'], ['Tirz Peptide 100mg', '/img/l3.100.png', 'tirz'], ['Tirz Peptide 120mg', '/img/l3.120.png', 'tirz'],
-  ['Semaglu Peptide 2mg', '/img/l4.22.png', 'semaglu'], ['Semaglu Peptide 5mg', '/img/l4.1.png', 'semaglu'], ['Semaglu Peptide 10mg', '/img/l4.png', 'semaglu'], ['Semaglu Peptide 15mg', '/img/l4.15.png', 'semaglu'], ['Semaglu Peptide 20mg', '/img/l4.2.png', 'semaglu'], ['Semaglu Peptide 30mg', '/img/l4.30.png', 'semaglu'],
-].map(([title, image, category], index) => ({ id: index + 1, title, image, category }))
+import { productFamilies, products } from './catalog'
 
 export default function Products() {
   const jsonLd = {
@@ -29,7 +16,7 @@ export default function Products() {
         '@type': 'ListItem',
         position: index + 1,
         name: product.title,
-        url: `https://www.meianpeptide.com/products#${product.category}`,
+        url: `https://www.meianpeptide.com/products/${product.category}`,
       })),
     },
   }
@@ -55,33 +42,33 @@ export default function Products() {
 
       <section className="section-shell py-16 sm:py-20">
         <div className="flex flex-wrap gap-3">
-          {categories.map((category) => (
+          {productFamilies.map((category) => (
             <a
-              key={category.key}
-              href={`#${category.key}`}
+              key={category.slug}
+              href={`#${category.slug}`}
               className="focus-ring rounded-full border border-[#cfdee4] bg-white px-5 py-3 text-xs font-bold text-[#506474] transition hover:border-[#0c5f8d] hover:text-[#0c5f8d]"
             >
-              {category.label}
+              {category.name}
             </a>
           ))}
         </div>
 
-        {categories.map((category) => {
-          const categoryProducts = products.filter((product) => product.category === category.key)
+        {productFamilies.map((category) => {
+          const categoryProducts = products.filter((product) => product.category === category.slug)
 
           return (
-            <section key={category.key} id={category.key} className="scroll-mt-28 pt-14">
+            <section key={category.slug} id={category.slug} className="scroll-mt-28 pt-14">
               <div className="flex flex-col gap-3 border-b border-[#dce5ea] pb-5 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                  <p className="eyebrow">{category.description}</p>
-                  <h2 className="font-display mt-2 text-4xl font-bold tracking-[-0.04em] text-[#10253b]">{category.label}</h2>
+                  <p className="eyebrow">{category.label}</p>
+                  <h2 className="font-display mt-2 text-4xl font-bold tracking-[-0.04em] text-[#10253b]">{category.name}</h2>
                 </div>
                 <p className="text-sm text-[#607080]">{categoryProducts.length} available specifications</p>
               </div>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {categoryProducts.map((product) => (
-                  <article key={product.id} className="group soft-card overflow-hidden rounded-[1.4rem] transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(8,55,84,0.14)]">
+                  <article key={product.title} className="group soft-card overflow-hidden rounded-[1.4rem] transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(8,55,84,0.14)]">
                     <div className="flex h-64 items-center justify-center bg-[linear-gradient(145deg,#f7fbfc,#e7f1f4)] p-6">
                       <Image src={product.image} alt={`${product.title} research peptide specification`} width={210} height={270} className="product-shadow h-full w-auto object-contain transition duration-500 group-hover:scale-105" />
                     </div>
@@ -89,6 +76,9 @@ export default function Products() {
                       <p className="text-[0.6rem] font-bold uppercase tracking-[0.14em] text-[#0c5f8d]">Documentation available on request</p>
                       <h3 className="font-display mt-2 text-xl font-bold tracking-[-0.03em] text-[#10253b]">{product.title}</h3>
                       <p className="mt-2 text-xs leading-5 text-[#71808d]">Research use only. Not for human consumption.</p>
+                      <Link href={`/products/${category.slug}`} className="focus-ring mt-4 block text-center text-[0.64rem] font-bold uppercase tracking-[0.16em] text-[#0c5f8d] transition hover:text-[#073754]">
+                        View Family Details
+                      </Link>
                       <Link href="/contact" className="focus-ring mt-5 block rounded-full bg-[#073754] px-4 py-3 text-center text-[0.64rem] font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#0c5f8d]">
                         Request Quote
                       </Link>
