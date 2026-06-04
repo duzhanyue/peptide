@@ -89,7 +89,7 @@ export default function About() {
             Clear product categories, accessible contact options, and export-ready communication help buyers move forward with confidence. Send us the peptide family, specification, and quantity you are considering to begin.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            {['Laboratory research use only', 'Direct quotation support', 'Destination-dependent logistics support'].map((item) => (
+            {['China peptide factory', 'Direct quotation support', 'Global buyer inquiry support'].map((item) => (
               <span key={item} className="rounded-full border border-[#d3e0e5] bg-[#f5f9fa] px-4 py-2 text-xs font-bold text-[#426276]">{item}</span>
             ))}
           </div>

@@ -54,7 +54,7 @@ export default function Home() {
             Peptide Factory<span className="text-[#c7e4eb]">.</span>
           </h1>
           <p className="home-reveal home-reveal-delay-2 mt-6 max-w-2xl text-sm leading-7 text-[#d5e8ed]">
-            A clear research-use peptide catalogue, direct inquiry support, and a practical path from specification review to documentation questions.
+            China peptide factory offering direct supply, competitive pricing, and fast support for global peptide buyers.
           </p>
           <div className="home-reveal home-reveal-delay-3 mt-7 flex flex-col gap-3 sm:flex-row">
             <Link href="/products" className="focus-ring rounded-full bg-white px-7 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-[#082b43] transition hover:bg-[#e2f1f4]">
@@ -69,7 +69,7 @@ export default function Home() {
           <div className="section-shell grid grid-cols-3 divide-x divide-white/15 py-4 text-center">
             {[
               ['04', 'Product families'],
-              ['Batch', 'Documentation inquiry'],
+              ['Factory', 'Direct supply'],
               ['Direct', 'Sales support'],
             ].map(([value, label]) => (
               <div key={label} className="px-2 sm:px-5">
@@ -148,7 +148,7 @@ export default function Home() {
               A catalogue designed for focused inquiries.
             </h2>
             <p className="mt-6 text-sm leading-7 text-[#506474]">
-              Product presentation stays centered on research-use positioning, specification review, and direct access to inquiry support.
+              Product presentation stays centered on factory supply, specification review, and direct access to inquiry support.
             </p>
             <Link href="/contact" className="focus-ring mt-8 inline-block rounded-full bg-[#073754] px-7 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-white transition hover:bg-[#0c5f8d]">
               Contact Sales

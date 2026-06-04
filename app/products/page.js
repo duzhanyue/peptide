@@ -8,7 +8,7 @@ export default function Products() {
     '@type': 'CollectionPage',
     name: 'MeiAn Peptide Research Peptide Catalogue',
     description:
-      'Research-use peptide specifications available from MeiAn Peptide.',
+      'Peptide factory catalogue specifications available from MeiAn Peptide.',
     url: 'https://www.meianpeptide.com/products',
     mainEntity: {
       '@type': 'ItemList',
@@ -35,8 +35,8 @@ export default function Products() {
         <div className="blueprint-grid absolute inset-0 opacity-30" />
         <div className="section-shell relative py-20 sm:py-24">
           <p className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-[#98cee0]">Product Catalogue</p>
-          <h1 className="font-display mt-4 max-w-2xl text-5xl font-bold tracking-[-0.055em] sm:text-6xl">Research peptide specifications.</h1>
-          <p className="mt-5 max-w-xl text-sm leading-7 text-[#c8dee6]">Browse our available catalogue options, then contact our team to confirm specifications and batch-related documentation.</p>
+          <h1 className="font-display mt-4 max-w-2xl text-5xl font-bold tracking-[-0.055em] sm:text-6xl">Peptide factory catalogue.</h1>
+          <p className="mt-5 max-w-xl text-sm leading-7 text-[#c8dee6]">Browse available catalogue options, then contact our team to discuss specifications, quantity, destination, and factory supply details.</p>
         </div>
       </section>
 
@@ -73,9 +73,9 @@ export default function Products() {
                       <Image src={product.image} alt={`${product.title} research peptide specification`} width={210} height={270} className="product-shadow h-full w-auto object-contain transition duration-500 group-hover:scale-105" />
                     </div>
                     <div className="border-t border-[#e0eaee] p-5">
-                      <p className="text-[0.6rem] font-bold uppercase tracking-[0.14em] text-[#0c5f8d]">Documentation available on request</p>
+                      <p className="text-[0.6rem] font-bold uppercase tracking-[0.14em] text-[#0c5f8d]">Factory supply inquiry available</p>
                       <h3 className="font-display mt-2 text-xl font-bold tracking-[-0.03em] text-[#10253b]">{product.title}</h3>
-                      <p className="mt-2 text-xs leading-5 text-[#71808d]">Research use only. Not for human consumption.</p>
+                      <p className="mt-2 text-xs leading-5 text-[#71808d]">Contact our team for current supply details and buyer support.</p>
                       <Link href={`/products/${category.slug}`} className="focus-ring mt-4 block text-center text-[0.64rem] font-bold uppercase tracking-[0.16em] text-[#0c5f8d] transition hover:text-[#073754]">
                         View Family Details
                       </Link>

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: '%s | MeiAn Peptide',
   },
   description:
-    'Explore research-use peptide catalogue options with clear specifications, responsive inquiry support, and destination-dependent logistics assistance.',
+    'China peptide factory offering direct supply, competitive pricing, and fast support for global peptide buyers.',
   alternates: {
     canonical: '/',
   },
@@ -49,7 +49,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         url: 'https://www.meianpeptide.com',
         logo: 'https://www.meianpeptide.com/img/logo.png',
         description:
-          'A China-based peptide factory website with research-use catalogue pages, sourcing inquiry support, and procurement guides.',
+          'A China-based peptide factory website with catalogue pages, sourcing inquiry support, and procurement guides.',
         email: 'mailto:zzz19182026@outlook.com',
         knowsAbout: [
           'Research peptide catalogue',
@@ -71,7 +71,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         url: 'https://www.meianpeptide.com',
         name: 'MeiAn Peptide',
         description:
-          'Research-use peptide catalogue pages, inquiry support, and procurement guides.',
+          'Peptide factory catalogue pages, inquiry support, and procurement guides.',
         inLanguage: 'en',
         publisher: { '@id': 'https://www.meianpeptide.com/#organization' },
       },

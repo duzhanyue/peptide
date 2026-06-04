@@ -110,7 +110,7 @@ export default async function ProductFamilyPage({ params }) {
                 <Image src={image} alt={`${name} catalogue specification`} width={210} height={270} className="product-shadow h-full w-auto object-contain" />
               </div>
               <div className="border-t border-[#e0eaee] p-5">
-                <p className="text-[0.6rem] font-bold uppercase tracking-[0.14em] text-[#0c5f8d]">Documentation inquiry available</p>
+                <p className="text-[0.6rem] font-bold uppercase tracking-[0.14em] text-[#0c5f8d]">Factory supply inquiry available</p>
                 <h3 className="font-display mt-2 text-xl font-bold tracking-[-0.03em] text-[#10253b]">{name}</h3>
               </div>
             </article>
@@ -122,7 +122,7 @@ export default async function ProductFamilyPage({ params }) {
         <div className="section-shell">
           <p className="eyebrow">Inquiry Checklist</p>
           <h2 className="font-display mt-3 text-3xl font-bold tracking-[-0.04em] text-[#10253b]">Prepare a focused request.</h2>
-          <p className="mt-3 max-w-2xl text-sm leading-7 text-[#607080]">Include the selected specification, quantity, destination, and any questions about packaging or batch-related documentation.</p>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-[#607080]">Include the selected specification, quantity, destination, packaging questions, and factory supply requirements.</p>
         </div>
       </section>
     </main>

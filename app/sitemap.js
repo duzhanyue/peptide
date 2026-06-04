@@ -3,7 +3,7 @@ import { productFamilies } from './products/catalog'
 
 export default function sitemap() {
   const baseUrl = 'https://www.meianpeptide.com'
-  const pages = ['', '/products', '/about', '/contact', '/faq', '/news']
+  const pages = ['', '/china-peptide-factory', '/products', '/about', '/contact', '/faq', '/privacy-policy', '/news']
 
   return [
     ...pages.map((path) => ({
