@@ -42,27 +42,20 @@ export default async function ProductFamilyPage({ params }) {
         name: `${family.name} Specifications`,
         description: family.summary,
         isPartOf: { '@id': 'https://www.meianpeptide.com/#website' },
-        about: { '@id': `${pageUrl}#catalogue-family` },
-      },
-      {
-        '@type': 'ProductGroup',
-        '@id': `${pageUrl}#catalogue-family`,
-        name: family.name,
-        description: family.summary,
-        url: pageUrl,
-        image: `https://www.meianpeptide.com${family.image}`,
-        brand: { '@id': 'https://www.meianpeptide.com/#organization' },
-        hasVariant: family.specifications.map(([name, image]) => ({
-          '@type': 'Product',
-          name,
-          image: `https://www.meianpeptide.com${image}`,
-          url: pageUrl,
-          additionalProperty: {
-            '@type': 'PropertyValue',
-            name: 'Catalogue specification',
-            value: name.replace(`${family.name} `, ''),
-          },
-        })),
+        about: {
+          '@type': 'Thing',
+          name: family.name,
+        },
+        mainEntity: {
+          '@type': 'ItemList',
+          name: `${family.name} catalogue specifications`,
+          itemListElement: family.specifications.map(([name], index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name,
+            url: pageUrl,
+          })),
+        },
       },
       {
         '@type': 'BreadcrumbList',

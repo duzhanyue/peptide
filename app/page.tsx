@@ -29,7 +29,7 @@ const productFamilies = [
     image: '/img/l3-home-transparent.png',
     href: '/products/tirz-peptide',
     theme: 'from-[#dbe8ea] via-[#fbfcfc] to-[#c5d9dd]',
-    text: 'Explore catalogue options with batch documentation support.',
+    text: 'Explore catalogue options with factory supply support.',
   },
   {
     name: 'Semaglu Peptide',
@@ -88,7 +88,7 @@ export default function Home() {
             Built around the specification your team needs.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#607080]">
-            Browse each family, review the available options, and send a shortlist when you are ready to discuss documentation and logistics.
+            Browse each family, review available options, and send a shortlist when you are ready to discuss supply, packaging, and logistics.
           </p>
         </div>
       </section>
@@ -129,7 +129,7 @@ export default function Home() {
               <span className="block text-[#b7dbe4]">Questions answered.</span>
             </h2>
             <p className="mt-6 text-sm leading-7 text-[#c5dce3]">
-              Research sourcing should begin with the essentials: catalogue family, specification, quantity, documentation requirements, and destination. Our inquiry team helps keep that conversation focused.
+              Factory sourcing should begin with the essentials: catalogue family, specification, quantity, packaging requirements, and destination. Our inquiry team helps keep that conversation focused.
             </p>
             <Link href="/about" className="focus-ring mt-8 inline-block text-xs font-bold uppercase tracking-[0.18em] text-white transition hover:text-[#b7dbe4]">
               Discover our approach <span className="ml-1">&rarr;</span>
