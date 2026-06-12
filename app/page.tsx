@@ -10,7 +10,7 @@ const productFamilies = [
   {
     name: 'GHK-CU',
     label: 'Copper peptide',
-    image: '/img/l1-home-transparent.png',
+    image: '/img/l1-home-transparent-kmax.png',
     href: '/products/ghk-cu',
     theme: 'from-[#dceef2] via-[#f6fbfc] to-[#c8dfe6]',
     text: 'A focused catalogue for research procurement conversations.',
@@ -18,7 +18,7 @@ const productFamilies = [
   {
     name: 'RT Peptide',
     label: 'Multiple specifications',
-    image: '/img/l2-home-transparent.png',
+    image: '/img/l2-home-transparent-kmax.png',
     href: '/products/rt-peptide',
     theme: 'from-[#d6e9ee] via-[#f7fbfc] to-[#bad4dd]',
     text: 'Review available specifications and prepare a clear inquiry.',
@@ -26,7 +26,7 @@ const productFamilies = [
   {
     name: 'Tirz Peptide',
     label: 'Research supply',
-    image: '/img/l3-home-transparent.png',
+    image: '/img/l3-home-transparent-kmax.png',
     href: '/products/tirz-peptide',
     theme: 'from-[#dbe8ea] via-[#fbfcfc] to-[#c5d9dd]',
     text: 'Explore catalogue options with factory supply support.',
@@ -34,7 +34,7 @@ const productFamilies = [
   {
     name: 'Semaglu Peptide',
     label: 'Research supply',
-    image: '/img/l4-home-transparent.png',
+    image: '/img/l4-home-transparent-kmax.png',
     href: '/products/semaglu-peptide',
     theme: 'from-[#d9eaed] via-[#f8fcfc] to-[#c1dadd]',
     text: 'Start with the exact specification your team is evaluating.',
@@ -49,7 +49,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,19,29,0.36)_0%,rgba(2,20,31,0.08)_40%,rgba(2,21,32,0.72)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#061722] to-transparent" />
         <div className="section-shell relative flex min-h-[640px] flex-col items-center justify-center pb-16 pt-10 text-center">
-          <p className="home-reveal text-[0.66rem] font-bold uppercase tracking-[0.42em] text-[#c2e1ea]">MeiAn Peptide Catalogue</p>
+          <p className="home-reveal text-[0.66rem] font-bold uppercase tracking-[0.42em] text-[#c2e1ea]">Kmax Peptide Catalogue</p>
           <h1 className="home-reveal home-reveal-delay-1 mt-5 max-w-5xl text-5xl font-semibold leading-[0.98] tracking-[-0.075em] sm:text-6xl lg:text-[5.4rem]">
             Peptide Factory<span className="text-[#c7e4eb]">.</span>
           </h1>
@@ -161,7 +161,7 @@ export default function Home() {
         <div className="section-shell">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-[0.66rem] font-bold uppercase tracking-[0.32em] text-[#63808b]">MeiAn Insights</p>
+              <p className="text-[0.66rem] font-bold uppercase tracking-[0.32em] text-[#63808b]">Kmax Insights</p>
               <h2 className="mt-4 text-4xl font-semibold tracking-[-0.07em] text-[#10253b] sm:text-5xl">Latest sourcing guides.</h2>
             </div>
             <Link href="/news" className="focus-ring text-xs font-bold uppercase tracking-[0.16em] text-[#0c5f8d] transition hover:text-[#073754]">

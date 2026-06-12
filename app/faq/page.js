@@ -4,7 +4,7 @@ import { faqs } from './faqs'
 export const metadata = {
   title: 'Peptide Catalogue FAQ',
   description:
-    'Find answers about MeiAn Peptide catalogue families, specification review, quotation inquiries, batch-related documentation questions, and contact options.',
+    'Find answers about Kmax Peptide catalogue families, specification review, quotation inquiries, batch-related documentation questions, and contact options.',
   alternates: { canonical: '/faq' },
 }
 

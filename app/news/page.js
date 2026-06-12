@@ -26,7 +26,7 @@ export async function generateMetadata({ searchParams }) {
   return {
     title: `Peptide News & Sourcing Guides${pageSuffix}`,
     description:
-      'Read practical peptide sourcing guides, buyer resources, and product knowledge articles from MeiAn Peptide.',
+      'Read practical peptide sourcing guides, buyer resources, and product knowledge articles from Kmax Peptide.',
     alternates: { canonical: getPageHref(currentPage) },
   }
 }
@@ -44,18 +44,18 @@ export default async function NewsPage({ searchParams }) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'MeiAn Peptide Sourcing Guides',
-    url: 'https://www.meianpeptide.com/news',
+    name: 'Kmax Peptide Sourcing Guides',
+    url: 'https://www.kmaxpeptide.com/news',
     description:
-      'Practical peptide sourcing guides, buyer resources, and product knowledge articles from MeiAn Peptide.',
-    isPartOf: { '@id': 'https://www.meianpeptide.com/#website' },
+      'Practical peptide sourcing guides, buyer resources, and product knowledge articles from Kmax Peptide.',
+    isPartOf: { '@id': 'https://www.kmaxpeptide.com/#website' },
     mainEntity: {
       '@type': 'ItemList',
       itemListElement: articles.map((article, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: article.title,
-        url: `https://www.meianpeptide.com/news/${article.slug}`,
+        url: `https://www.kmaxpeptide.com/news/${article.slug}`,
       })),
     },
   }
@@ -71,7 +71,7 @@ export default async function NewsPage({ searchParams }) {
       <section className="blueprint-grid border-b border-[#dce5ea] bg-[#eef5f6] pt-20">
         <div className="section-shell grid gap-10 py-16 sm:py-20 lg:grid-cols-[1fr_0.65fr] lg:items-end">
           <div>
-            <p className="eyebrow">MeiAn Insights</p>
+            <p className="eyebrow">Kmax Insights</p>
             <h1 className="font-display mt-4 max-w-3xl text-5xl font-bold leading-[1.04] tracking-[-0.055em] text-[#10253b] sm:text-6xl">
               Research peptide sourcing insights.
             </h1>

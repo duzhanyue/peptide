@@ -18,7 +18,7 @@ export async function generateMetadata({ params }) {
     description: family.summary,
     alternates: { canonical: `/products/${family.slug}` },
     openGraph: {
-      title: `${family.name} Specifications | MeiAn Peptide`,
+      title: `${family.name} Specifications | Kmax Peptide`,
       description: family.summary,
       images: [family.image],
     },
@@ -31,7 +31,7 @@ export default async function ProductFamilyPage({ params }) {
 
   if (!family) notFound()
 
-  const pageUrl = `https://www.meianpeptide.com/products/${family.slug}`
+  const pageUrl = `https://www.kmaxpeptide.com/products/${family.slug}`
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -41,7 +41,7 @@ export default async function ProductFamilyPage({ params }) {
         url: pageUrl,
         name: `${family.name} Specifications`,
         description: family.summary,
-        isPartOf: { '@id': 'https://www.meianpeptide.com/#website' },
+        isPartOf: { '@id': 'https://www.kmaxpeptide.com/#website' },
         about: {
           '@type': 'Thing',
           name: family.name,
@@ -60,8 +60,8 @@ export default async function ProductFamilyPage({ params }) {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.meianpeptide.com' },
-          { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://www.meianpeptide.com/products' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.kmaxpeptide.com' },
+          { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://www.kmaxpeptide.com/products' },
           { '@type': 'ListItem', position: 3, name: family.name, item: pageUrl },
         ],
       },

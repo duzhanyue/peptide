@@ -3,7 +3,7 @@ import Link from 'next/link'
 export const metadata = {
   title: 'Contact Sales for a Peptide Quotation',
   description:
-    'Contact MeiAn Peptide by WhatsApp or email to discuss peptide factory catalogue options, quotation details, and destination-dependent logistics support.',
+    'Contact Kmax Peptide by WhatsApp or email to discuss peptide factory catalogue options, quotation details, and destination-dependent logistics support.',
   alternates: { canonical: '/contact' },
 }
 

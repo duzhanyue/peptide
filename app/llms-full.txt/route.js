@@ -4,16 +4,18 @@ import { productFamilies } from '../products/catalog'
 
 export function GET() {
   const families = productFamilies
-    .map((family) => `## ${family.name}\n${family.summary}\nAvailable specifications: ${family.specifications.map(([name]) => name).join(', ')}.\nURL: https://www.meianpeptide.com/products/${family.slug}`)
+    .map((family) => `## ${family.name}\n${family.summary}\nAvailable specifications: ${family.specifications.map(([name]) => name).join(', ')}.\nURL: https://www.kmaxpeptide.com/products/${family.slug}`)
     .join('\n\n')
   const faqText = faqs.map((faq) => `### ${faq.question}\n${faq.answer}`).join('\n\n')
   const guides = articles
-    .map((article) => `- ${article.title}: ${article.description} https://www.meianpeptide.com/news/${article.slug}`)
+    .map((article) => `- ${article.title}: ${article.description} https://www.kmaxpeptide.com/news/${article.slug}`)
     .join('\n')
 
-  return new Response(`# MeiAn Peptide Catalogue Reference
+  return new Response(`# Kmax Peptide Catalogue Reference
 
-MeiAn Peptide is a China-based peptide factory website for research-use catalogue and sourcing inquiries. Buyers can review product-family specification options and contact the sales team with a shortlist.
+Kmax Peptide is a China-based peptide factory website for research-use catalogue and sourcing inquiries. Buyers can review product-family specification options and contact the sales team with a shortlist.
+
+Primary pages include the product catalogue, China peptide factory landing page, certificate image gallery, FAQ, news guides, privacy policy, and contact page. Certificate images are available at https://www.kmaxpeptide.com/certificates for buyer reference.
 
 # Catalogue Families
 ${families}

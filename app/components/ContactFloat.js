@@ -4,7 +4,7 @@ export default function ContactFloat() {
       href="https://wa.me/85259951323"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with MeiAn Peptide on WhatsApp"
+      aria-label="Chat with Kmax Peptide on WhatsApp"
       className="focus-ring fixed bottom-5 right-5 z-40 flex items-center gap-3 rounded-full bg-[#25d366] px-4 py-3 text-sm font-bold text-white shadow-[0_16px_35px_rgba(20,105,61,0.26)] transition hover:-translate-y-1 hover:shadow-[0_20px_42px_rgba(20,105,61,0.34)]"
     >
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden="true">

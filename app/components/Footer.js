@@ -7,9 +7,9 @@ export default function Footer() {
       <div className="section-shell grid gap-10 py-14 md:grid-cols-[1.4fr_0.7fr_0.9fr]">
         <div>
           <div className="flex items-center gap-3">
-            <Image src="/img/logo.png" alt="" width={44} height={44} className="h-11 w-11 rounded-xl object-cover" />
+            <Image src="/img/kmax-logo.svg" alt="" width={44} height={44} className="h-11 w-11 rounded-xl object-contain" />
             <div>
-              <p className="font-display text-2xl font-bold leading-none">MeiAn Peptide</p>
+              <p className="font-display text-2xl font-bold leading-none">Kmax Peptide</p>
               <p className="mt-1 text-[0.58rem] font-bold uppercase tracking-[0.25em] text-[#9cc9dc]">Professional peptide supply</p>
             </div>
           </div>
@@ -22,6 +22,7 @@ export default function Footer() {
           <div className="mt-5 grid gap-3 text-sm text-[#d6e5eb]">
             <Link href="/products" className="hover:text-white">Products</Link>
             <Link href="/about" className="hover:text-white">About</Link>
+            <Link href="/certificates" className="hover:text-white">Certificates</Link>
             <Link href="/news" className="hover:text-white">News</Link>
             <Link href="/faq" className="hover:text-white">FAQ</Link>
             <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
@@ -38,7 +39,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-white/10">
         <div className="section-shell flex flex-col gap-2 py-5 text-xs text-[#8fb2c1] sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; {new Date().getFullYear()} MeiAn Peptide. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Kmax Peptide. All rights reserved.</p>
           <p>China peptide factory for global buyer inquiries.</p>
           <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
           <Link href="/llms.txt" className="hover:text-white">AI site summary</Link>

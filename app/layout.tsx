@@ -6,10 +6,10 @@ import Footer from './components/Footer'
 import ContactFloat from './components/ContactFloat'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.meianpeptide.com'),
+  metadataBase: new URL('https://www.kmaxpeptide.com'),
   title: {
-    default: 'MeiAn Peptide | Professional Peptide Supply',
-    template: '%s | MeiAn Peptide',
+    default: 'Kmax Peptide | Professional Peptide Supply',
+    template: '%s | Kmax Peptide',
   },
   description:
     'China peptide factory offering direct supply, competitive pricing, and fast support for global peptide buyers.',
@@ -21,17 +21,17 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'MeiAn Peptide | Professional Peptide Supply',
+    title: 'Kmax Peptide | Professional Peptide Supply',
     description:
       'A peptide catalogue and inquiry support resource for research procurement.',
-    url: 'https://www.meianpeptide.com',
-    siteName: 'MeiAn Peptide',
+    url: 'https://www.kmaxpeptide.com',
+    siteName: 'Kmax Peptide',
     images: ['/img/hero-lab-v2.png'],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MeiAn Peptide | Professional Peptide Supply',
+    title: 'Kmax Peptide | Professional Peptide Supply',
     description:
       'A peptide catalogue and inquiry support resource for research procurement.',
     images: ['/img/hero-lab-v2.png'],
@@ -44,10 +44,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     '@graph': [
       {
         '@type': 'Organization',
-        '@id': 'https://www.meianpeptide.com/#organization',
-        name: 'MeiAn Peptide',
-        url: 'https://www.meianpeptide.com',
-        logo: 'https://www.meianpeptide.com/img/logo.png',
+        '@id': 'https://www.kmaxpeptide.com/#organization',
+        name: 'Kmax Peptide',
+        url: 'https://www.kmaxpeptide.com',
+        logo: 'https://www.kmaxpeptide.com/img/kmax-logo.svg',
         description:
           'A China-based peptide factory website with catalogue pages, sourcing inquiry support, and procurement guides.',
         email: 'mailto:zzz19182026@outlook.com',
@@ -67,13 +67,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://www.meianpeptide.com/#website',
-        url: 'https://www.meianpeptide.com',
-        name: 'MeiAn Peptide',
+        '@id': 'https://www.kmaxpeptide.com/#website',
+        url: 'https://www.kmaxpeptide.com',
+        name: 'Kmax Peptide',
         description:
           'Peptide factory catalogue pages, inquiry support, and procurement guides.',
         inLanguage: 'en',
-        publisher: { '@id': 'https://www.meianpeptide.com/#organization' },
+        publisher: { '@id': 'https://www.kmaxpeptide.com/#organization' },
       },
     ],
   }

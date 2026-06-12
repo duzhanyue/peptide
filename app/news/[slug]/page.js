@@ -34,7 +34,7 @@ export default async function ArticlePage({ params }) {
   if (!article) notFound()
 
   const related = articles.filter((item) => item.slug !== article.slug).slice(0, 3)
-  const pageUrl = `https://www.meianpeptide.com/news/${article.slug}`
+  const pageUrl = `https://www.kmaxpeptide.com/news/${article.slug}`
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -43,23 +43,23 @@ export default async function ArticlePage({ params }) {
         '@id': `${pageUrl}#article`,
         headline: article.title,
         description: article.description,
-        image: `https://www.meianpeptide.com${article.image}`,
+        image: `https://www.kmaxpeptide.com${article.image}`,
         datePublished: article.date,
         dateModified: article.date,
         author: {
-          '@id': 'https://www.meianpeptide.com/#organization',
+          '@id': 'https://www.kmaxpeptide.com/#organization',
         },
         publisher: {
-          '@id': 'https://www.meianpeptide.com/#organization',
+          '@id': 'https://www.kmaxpeptide.com/#organization',
         },
         mainEntityOfPage: pageUrl,
-        isPartOf: { '@id': 'https://www.meianpeptide.com/#website' },
+        isPartOf: { '@id': 'https://www.kmaxpeptide.com/#website' },
       },
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.meianpeptide.com' },
-          { '@type': 'ListItem', position: 2, name: 'News', item: 'https://www.meianpeptide.com/news' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.kmaxpeptide.com' },
+          { '@type': 'ListItem', position: 2, name: 'News', item: 'https://www.kmaxpeptide.com/news' },
           { '@type': 'ListItem', position: 3, name: article.title, item: pageUrl },
         ],
       },
@@ -79,7 +79,7 @@ export default async function ArticlePage({ params }) {
           <div className="section-shell max-w-5xl py-16 text-center sm:py-20">
             <p className="eyebrow">{article.category}</p>
             <h1 className="font-display mx-auto mt-4 max-w-4xl text-4xl font-bold leading-[1.08] tracking-[-0.05em] text-[#10253b] sm:text-6xl">{article.title}</h1>
-            <p className="mt-6 text-xs font-bold uppercase tracking-[0.14em] text-[#6c8491]">Published by MeiAn Peptide &middot; {formatArticleDate(article.date)} &middot; {article.readTime}</p>
+            <p className="mt-6 text-xs font-bold uppercase tracking-[0.14em] text-[#6c8491]">Published by Kmax Peptide &middot; {formatArticleDate(article.date)} &middot; {article.readTime}</p>
           </div>
         </header>
 

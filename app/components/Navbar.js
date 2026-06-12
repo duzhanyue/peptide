@@ -9,6 +9,7 @@ const navItems = [
   { href: '/', label: 'Home' },
   { href: '/products', label: 'Products' },
   { href: '/about', label: 'About' },
+  { href: '/certificates', label: 'Certificates' },
   { href: '/news', label: 'News' },
   { href: '/faq', label: 'FAQ' },
 ]
@@ -21,9 +22,9 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/80 bg-white/88 shadow-[0_8px_35px_rgba(7,55,84,0.06)] backdrop-blur-xl">
       <div className="section-shell flex h-20 items-center justify-between">
         <Link href="/" className="focus-ring flex items-center gap-3 rounded-sm" onClick={() => setMenuOpen(false)}>
-          <Image src="/img/logo.png" alt="MeiAn Peptide" width={48} height={48} className="h-11 w-11 rounded-xl object-cover" priority />
+          <Image src="/img/kmax-logo.svg" alt="Kmax Peptide" width={48} height={48} className="h-11 w-11 rounded-xl object-contain" priority />
           <span>
-            <span className="font-display block text-[1.38rem] font-bold leading-none tracking-[-0.04em] text-[#10253b]">MeiAn</span>
+            <span className="font-display block text-[1.38rem] font-bold leading-none tracking-[-0.04em] text-[#10253b]">Kmax</span>
             <span className="mt-1 block text-[0.56rem] font-bold uppercase tracking-[0.32em] text-[#0c5f8d]">Peptide</span>
           </span>
         </Link>

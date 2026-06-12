@@ -6,17 +6,17 @@ export default function Products() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'MeiAn Peptide Research Peptide Catalogue',
+    name: 'Kmax Peptide Research Peptide Catalogue',
     description:
-      'Peptide factory catalogue specifications available from MeiAn Peptide.',
-    url: 'https://www.meianpeptide.com/products',
+      'Peptide factory catalogue specifications available from Kmax Peptide.',
+    url: 'https://www.kmaxpeptide.com/products',
     mainEntity: {
       '@type': 'ItemList',
       itemListElement: products.map((product, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: product.title,
-        url: `https://www.meianpeptide.com/products/${product.category}`,
+        url: `https://www.kmaxpeptide.com/products/${product.category}`,
       })),
     },
   }

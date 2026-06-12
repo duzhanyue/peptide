@@ -3,7 +3,7 @@ import Link from 'next/link'
 export const metadata = {
   title: 'China Peptide Factory for Global Buyers',
   description:
-    'MeiAn Peptide is a China peptide factory supporting global buyer inquiries with direct communication, competitive pricing, and responsive supply support.',
+    'Kmax Peptide is a China peptide factory supporting global buyer inquiries with direct communication, competitive pricing, and responsive supply support.',
   alternates: { canonical: '/china-peptide-factory' },
 }
 
@@ -17,7 +17,7 @@ export default function ChinaPeptideFactoryLanding() {
             Direct peptide supply support for global buyers.
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-[#607080]">
-            MeiAn Peptide helps international buyers discuss catalogue requirements, supply quantities, packaging needs, destination details, and factory-direct quotation support.
+            Kmax Peptide helps international buyers discuss catalogue requirements, supply quantities, packaging needs, destination details, and factory-direct quotation support.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Link href="/contact" className="focus-ring rounded-full bg-[#073754] px-7 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#0c5f8d]">

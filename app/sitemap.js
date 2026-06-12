@@ -2,8 +2,8 @@ import { articles } from './news/articles'
 import { productFamilies } from './products/catalog'
 
 export default function sitemap() {
-  const baseUrl = 'https://www.meianpeptide.com'
-  const pages = ['', '/china-peptide-factory', '/products', '/about', '/contact', '/faq', '/privacy-policy', '/news']
+  const baseUrl = 'https://www.kmaxpeptide.com'
+  const pages = ['', '/china-peptide-factory', '/products', '/about', '/certificates', '/contact', '/faq', '/privacy-policy', '/news']
 
   return [
     ...pages.map((path) => ({

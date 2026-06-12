@@ -1,6 +1,6 @@
 export const faqs = [
   {
-    question: 'Which peptide catalogue families are listed by MeiAn Peptide?',
+    question: 'Which peptide catalogue families are listed by Kmax Peptide?',
     answer:
       'The catalogue currently lists GHK-CU, RT Peptide, Tirz Peptide, and Semaglu Peptide families. Each family page shows the available specification options.',
   },
@@ -20,12 +20,12 @@ export const faqs = [
       'Yes. Share the selected catalogue item and ask which batch-related information is available for that inquiry.',
   },
   {
-    question: 'How can I contact MeiAn Peptide?',
+    question: 'How can I contact Kmax Peptide?',
     answer:
       'Use the contact page to start a WhatsApp conversation or send an email with your sourcing list.',
   },
   {
-    question: 'Does MeiAn Peptide publish sourcing guides?',
+    question: 'Does Kmax Peptide publish sourcing guides?',
     answer:
       'Yes. The News section includes practical guides about specification review, supplier evaluation, inquiry preparation, documentation questions, and logistics planning.',
   },

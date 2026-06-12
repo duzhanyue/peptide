@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata = {
   title: 'About Our Research Peptide Supply',
   description:
-    'Learn how MeiAn Peptide supports distributors, procurement teams, and research buyers with a focused peptide catalogue and direct quotation support.',
+    'Learn how Kmax Peptide supports distributors, procurement teams, and research buyers with a focused peptide catalogue and direct quotation support.',
   alternates: { canonical: '/about' },
 }
 
@@ -18,10 +18,10 @@ export default function About() {
   return (
     <main>
       <section className="relative overflow-hidden bg-[#082b43] pt-20 text-white">
-        <Image src="/img/c1.png" alt="MeiAn Peptide facility" fill priority className="object-cover opacity-60" sizes="100vw" />
+        <Image src="/img/c1.png" alt="Kmax Peptide facility" fill priority className="object-cover opacity-60" sizes="100vw" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,34,53,0.96),rgba(4,34,53,0.48),rgba(4,34,53,0.25))]" />
         <div className="section-shell relative py-24 sm:py-32">
-          <p className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-[#a3d1e0]">About MeiAn Peptide</p>
+          <p className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-[#a3d1e0]">About Kmax Peptide</p>
           <h1 className="font-display mt-4 max-w-3xl text-5xl font-bold leading-[1.04] tracking-[-0.055em] sm:text-7xl">A sourcing partner built around clarity.</h1>
           <p className="mt-6 max-w-xl text-sm leading-7 text-[#d4e4e9]">Supporting research peptide buyers with a focused catalogue, responsive communication, and a direct path to quotation.</p>
         </div>
@@ -35,7 +35,7 @@ export default function About() {
           <p className="eyebrow">Our Approach</p>
           <h2 className="font-display mt-4 text-4xl font-bold leading-tight tracking-[-0.045em] text-[#10253b] sm:text-5xl">Make every procurement conversation more efficient.</h2>
           <p className="mt-6 text-sm leading-7 text-[#607080]">
-            MeiAn Peptide is a China-based peptide factory website presenting a focused portfolio for research and professional sourcing. Our goal is simple: help buyers identify a product, communicate the specification they need, and reach a sales contact without unnecessary friction.
+            Kmax Peptide is a China-based peptide factory website presenting a focused portfolio for research and professional sourcing. Our goal is simple: help buyers identify a product, communicate the specification they need, and reach a sales contact without unnecessary friction.
           </p>
           <p className="mt-4 text-sm leading-7 text-[#607080]">
             From product discovery to quotation support, our website is designed for distributors, procurement teams, and research buyers who value a responsive and practical sourcing experience.

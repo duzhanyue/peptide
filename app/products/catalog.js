@@ -67,6 +67,15 @@ export const productFamilies = [
   },
 ]
 
+function versionProductImage(image) {
+  return image.replace('.png', '-kmax.png')
+}
+
+productFamilies.forEach((family) => {
+  family.image = versionProductImage(family.image)
+  family.specifications = family.specifications.map(([title, image]) => [title, versionProductImage(image)])
+})
+
 export const products = productFamilies.flatMap((family) =>
   family.specifications.map(([title, image]) => ({
     title,

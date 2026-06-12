@@ -3,7 +3,7 @@ import Link from 'next/link'
 export const metadata = {
   title: 'Privacy Policy',
   description:
-    'Read the MeiAn Peptide privacy policy, including information collection, use, cookies, disclosure, and contact details.',
+    'Read the Kmax Peptide privacy policy, including information collection, use, cookies, disclosure, and contact details.',
   alternates: { canonical: '/privacy-policy' },
 }
 
@@ -21,7 +21,7 @@ export default function PrivacyPolicy() {
     <main className="bg-[#f6fafb] pt-20">
       <section className="blueprint-grid border-b border-[#dce5ea]">
         <div className="section-shell py-16 text-center sm:py-20">
-          <p className="eyebrow">MeiAn Peptide</p>
+          <p className="eyebrow">Kmax Peptide</p>
           <h1 className="font-display mx-auto mt-4 max-w-4xl text-5xl font-bold tracking-[-0.055em] text-[#10253b] sm:text-6xl">
             Privacy Policy
           </h1>
@@ -91,7 +91,7 @@ export default function PrivacyPolicy() {
                 <a href="mailto:zzz19182026@outlook.com" className="font-bold text-[#0c5f8d] hover:text-[#073754]">zzz19182026@outlook.com</a>.
               </p>
               <Link href="/contact" className="focus-ring mt-6 inline-block rounded-full bg-[#073754] px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-white transition hover:bg-[#0c5f8d]">
-                Contact MeiAn Peptide
+                Contact Kmax Peptide
               </Link>
             </section>
           </div>
