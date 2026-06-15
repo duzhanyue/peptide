@@ -6,7 +6,7 @@ import Footer from './components/Footer'
 import ContactFloat from './components/ContactFloat'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.kmaxpeptide.com'),
+  metadataBase: new URL('https://www.kmaxxpeptide.com'),
   title: {
     default: 'Kmax Peptide | Professional Peptide Supply',
     template: '%s | Kmax Peptide',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: 'Kmax Peptide | Professional Peptide Supply',
     description:
       'A peptide catalogue and inquiry support resource for research procurement.',
-    url: 'https://www.kmaxpeptide.com',
+    url: 'https://www.kmaxxpeptide.com',
     siteName: 'Kmax Peptide',
     images: ['/img/hero-lab-v2.png'],
     type: 'website',
@@ -44,10 +44,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     '@graph': [
       {
         '@type': 'Organization',
-        '@id': 'https://www.kmaxpeptide.com/#organization',
+        '@id': 'https://www.kmaxxpeptide.com/#organization',
         name: 'Kmax Peptide',
-        url: 'https://www.kmaxpeptide.com',
-        logo: 'https://www.kmaxpeptide.com/img/kmax-logo.svg',
+        url: 'https://www.kmaxxpeptide.com',
+        logo: 'https://www.kmaxxpeptide.com/img/kmax-logo.svg',
         description:
           'A China-based peptide factory website with catalogue pages, sourcing inquiry support, and procurement guides.',
         email: 'mailto:zzz19182026@outlook.com',
@@ -67,13 +67,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://www.kmaxpeptide.com/#website',
-        url: 'https://www.kmaxpeptide.com',
+        '@id': 'https://www.kmaxxpeptide.com/#website',
+        url: 'https://www.kmaxxpeptide.com',
         name: 'Kmax Peptide',
         description:
           'Peptide factory catalogue pages, inquiry support, and procurement guides.',
         inLanguage: 'en',
-        publisher: { '@id': 'https://www.kmaxpeptide.com/#organization' },
+        publisher: { '@id': 'https://www.kmaxxpeptide.com/#organization' },
       },
     ],
   }

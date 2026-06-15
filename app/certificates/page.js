@@ -19,7 +19,7 @@ const certificates = Array.from({ length: 8 }, (_, index) => {
 })
 
 export default function CertificatesPage() {
-  const pageUrl = 'https://www.kmaxpeptide.com/certificates'
+  const pageUrl = 'https://www.kmaxxpeptide.com/certificates'
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -27,7 +27,7 @@ export default function CertificatesPage() {
     url: pageUrl,
     name: 'Kmax Peptide Certificates and Company Documents',
     description: metadata.description,
-    isPartOf: { '@id': 'https://www.kmaxpeptide.com/#website' },
+    isPartOf: { '@id': 'https://www.kmaxxpeptide.com/#website' },
     mainEntity: {
       '@type': 'ItemList',
       name: 'Certificate image gallery',

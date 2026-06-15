@@ -45,17 +45,17 @@ export default async function NewsPage({ searchParams }) {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Kmax Peptide Sourcing Guides',
-    url: 'https://www.kmaxpeptide.com/news',
+    url: 'https://www.kmaxxpeptide.com/news',
     description:
       'Practical peptide sourcing guides, buyer resources, and product knowledge articles from Kmax Peptide.',
-    isPartOf: { '@id': 'https://www.kmaxpeptide.com/#website' },
+    isPartOf: { '@id': 'https://www.kmaxxpeptide.com/#website' },
     mainEntity: {
       '@type': 'ItemList',
       itemListElement: articles.map((article, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: article.title,
-        url: `https://www.kmaxpeptide.com/news/${article.slug}`,
+        url: `https://www.kmaxxpeptide.com/news/${article.slug}`,
       })),
     },
   }

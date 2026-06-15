@@ -9,14 +9,14 @@ export default function Products() {
     name: 'Kmax Peptide Research Peptide Catalogue',
     description:
       'Peptide factory catalogue specifications available from Kmax Peptide.',
-    url: 'https://www.kmaxpeptide.com/products',
+    url: 'https://www.kmaxxpeptide.com/products',
     mainEntity: {
       '@type': 'ItemList',
       itemListElement: products.map((product, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: product.title,
-        url: `https://www.kmaxpeptide.com/products/${product.category}`,
+        url: `https://www.kmaxxpeptide.com/products/${product.category}`,
       })),
     },
   }

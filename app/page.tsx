@@ -81,15 +81,32 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#f5f7f7] py-18 text-center sm:py-24">
-        <div className="section-shell">
-          <p className="text-[0.66rem] font-bold uppercase tracking-[0.32em] text-[#63808b]">Research Catalogue</p>
-          <h2 className="mx-auto mt-4 max-w-4xl text-4xl font-semibold leading-[1.04] tracking-[-0.07em] text-[#10253b] sm:text-5xl">
-            Built around the specification your team needs.
-          </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#607080]">
-            Browse each family, review available options, and send a shortlist when you are ready to discuss supply, packaging, and logistics.
-          </p>
+      <section className="relative overflow-hidden bg-[#f5f7f7] py-16 sm:py-22">
+        <div className="absolute left-1/2 top-0 h-64 w-[42rem] -translate-x-1/2 rounded-full bg-[#d7edf4]/70 blur-3xl" />
+        <div className="section-shell relative">
+          <div className="grid gap-8 rounded-[1.8rem] border border-[#dce5ea] bg-white/78 p-7 shadow-[0_24px_70px_rgba(8,55,84,0.08)] backdrop-blur-xl sm:p-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div>
+              <p className="text-[0.66rem] font-bold uppercase tracking-[0.32em] text-[#63808b]">Source Factory Strength</p>
+              <h2 className="mt-4 max-w-3xl text-4xl font-semibold leading-[1.04] tracking-[-0.07em] text-[#10253b] sm:text-5xl">
+                Focus on peptide research and development production.
+              </h2>
+              <p className="mt-5 max-w-2xl text-base font-semibold leading-8 text-[#0c5f8d]">
+                Source factory strength wins trust.
+              </p>
+            </div>
+            <div className="grid gap-3">
+              {[
+                ['R&D focus', 'Focused peptide development and production support for global buyer inquiries.'],
+                ['Factory supply', 'Direct communication for product options, quantities, packaging, and logistics.'],
+                ['Trust building', 'Clear catalogue presentation and responsive support help buyers move faster.'],
+              ].map(([title, text]) => (
+                <div key={title} className="rounded-2xl border border-[#dce5ea] bg-[#f8fbfc] p-5">
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#0c5f8d]">{title}</p>
+                  <p className="mt-2 text-sm leading-6 text-[#607080]">{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

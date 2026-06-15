@@ -34,7 +34,7 @@ export default async function ArticlePage({ params }) {
   if (!article) notFound()
 
   const related = articles.filter((item) => item.slug !== article.slug).slice(0, 3)
-  const pageUrl = `https://www.kmaxpeptide.com/news/${article.slug}`
+  const pageUrl = `https://www.kmaxxpeptide.com/news/${article.slug}`
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -43,23 +43,23 @@ export default async function ArticlePage({ params }) {
         '@id': `${pageUrl}#article`,
         headline: article.title,
         description: article.description,
-        image: `https://www.kmaxpeptide.com${article.image}`,
+        image: `https://www.kmaxxpeptide.com${article.image}`,
         datePublished: article.date,
         dateModified: article.date,
         author: {
-          '@id': 'https://www.kmaxpeptide.com/#organization',
+          '@id': 'https://www.kmaxxpeptide.com/#organization',
         },
         publisher: {
-          '@id': 'https://www.kmaxpeptide.com/#organization',
+          '@id': 'https://www.kmaxxpeptide.com/#organization',
         },
         mainEntityOfPage: pageUrl,
-        isPartOf: { '@id': 'https://www.kmaxpeptide.com/#website' },
+        isPartOf: { '@id': 'https://www.kmaxxpeptide.com/#website' },
       },
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.kmaxpeptide.com' },
-          { '@type': 'ListItem', position: 2, name: 'News', item: 'https://www.kmaxpeptide.com/news' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.kmaxxpeptide.com' },
+          { '@type': 'ListItem', position: 2, name: 'News', item: 'https://www.kmaxxpeptide.com/news' },
           { '@type': 'ListItem', position: 3, name: article.title, item: pageUrl },
         ],
       },

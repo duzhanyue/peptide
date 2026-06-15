@@ -22,8 +22,8 @@ export default function About() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,34,53,0.96),rgba(4,34,53,0.48),rgba(4,34,53,0.25))]" />
         <div className="section-shell relative py-24 sm:py-32">
           <p className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-[#a3d1e0]">About Kmax Peptide</p>
-          <h1 className="font-display mt-4 max-w-3xl text-5xl font-bold leading-[1.04] tracking-[-0.055em] sm:text-7xl">A sourcing partner built around clarity.</h1>
-          <p className="mt-6 max-w-xl text-sm leading-7 text-[#d4e4e9]">Supporting research peptide buyers with a focused catalogue, responsive communication, and a direct path to quotation.</p>
+          <h1 className="font-display mt-4 max-w-3xl text-5xl font-bold leading-[1.04] tracking-[-0.055em] sm:text-7xl">Peptide R&D production with factory strength.</h1>
+          <p className="mt-6 max-w-xl text-sm leading-7 text-[#d4e4e9]">Kmax Peptide focuses on peptide research, development, and production support for global buyers who value stable quality, direct communication, and reliable service.</p>
         </div>
       </section>
 
@@ -32,13 +32,18 @@ export default function About() {
           <Image src="/img/c2.png" alt="Peptide production environment" width={1400} height={950} className="h-full min-h-[360px] w-full object-cover" />
         </div>
         <div>
-          <p className="eyebrow">Our Approach</p>
-          <h2 className="font-display mt-4 text-4xl font-bold leading-tight tracking-[-0.045em] text-[#10253b] sm:text-5xl">Make every procurement conversation more efficient.</h2>
+          <h2 className="font-display mt-4 text-4xl font-bold leading-tight tracking-[-0.045em] text-[#10253b] sm:text-5xl">Focus on peptide research and development production, source factory strength wins trust.</h2>
           <p className="mt-6 text-sm leading-7 text-[#607080]">
-            Kmax Peptide is a China-based peptide factory website presenting a focused portfolio for research and professional sourcing. Our goal is simple: help buyers identify a product, communicate the specification they need, and reach a sales contact without unnecessary friction.
+            Kmax Peptide is a professional international supplier specializing in high-quality beauty peptide products, bridging cutting-edge biotech and global skincare needs. With years of expertise in cosmeceutical ingredients, we deliver pure, effective peptide solutions for brands worldwide.
           </p>
           <p className="mt-4 text-sm leading-7 text-[#607080]">
-            From product discovery to quotation support, our website is designed for distributors, procurement teams, and research buyers who value a responsive and practical sourcing experience.
+            Our core offerings cover a comprehensive range of beauty peptides: anti-aging peptides (e.g., Argireline, Matrixyl), hydrating peptides, brightening peptides, and firming peptides. All products are manufactured in GMP-certified facilities, adhering to ISO, FDA, and EU cosmetic standards. We conduct strict raw material sourcing and third-party testing to ensure purity, safety, and efficacy.
+          </p>
+                    <p className="mt-4 text-sm leading-7 text-[#607080]">
+            We provide flexible OEM/ODM services, tailored to startups, mid-sized brands, and large cosmetics enterprises. Our dedicated team offers one-stop support – from formula customization to global logistics and after-sales service – ensuring smooth cooperation.
+          </p>
+                              <p className="mt-4 text-sm leading-7 text-[#607080]">
+            Committed to innovation, we invest in R&D to upgrade peptide formulations, meeting evolving market trends. Choose Kmax Peptide as your trusted partner for premium beauty peptides that enhance your product line and fuel business growth.
           </p>
           <Link href="/products" className="focus-ring mt-8 inline-block rounded-full bg-[#073754] px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#0c5f8d]">
             Browse Products
@@ -63,17 +68,18 @@ export default function About() {
       </section>
 
       <section className="section-shell py-16 sm:py-20">
-        <p className="eyebrow">Company Facts</p>
-        <h2 className="font-display mt-3 text-4xl font-bold tracking-[-0.045em] text-[#10253b] sm:text-5xl">A clear reference for sourcing inquiries.</h2>
+        <p className="eyebrow">Service Advantages</p>
+        <h2 className="font-display mt-3 text-4xl font-bold tracking-[-0.045em] text-[#10253b] sm:text-5xl">Reliable support from inquiry to after-sales service.</h2>
         <div className="mt-8 grid gap-px overflow-hidden rounded-[1.4rem] border border-[#d7e3e7] bg-[#d7e3e7] md:grid-cols-2">
           {[
-            ['Website focus', 'China-based peptide factory catalogue and sourcing inquiry support.'],
-            ['Catalogue families', 'GHK-CU, RT Peptide, Tirz Peptide, and Semaglu Peptide.'],
-            ['Inquiry details', 'Product family, specification, quantity, destination, and documentation questions.'],
-            ['Contact options', 'WhatsApp and email are available from the contact page.'],
-          ].map(([title, text]) => (
+            ['01', 'Perfect quality proofreading review process', 'Each inquiry is handled with careful specification checking and quality-focused review before response.'],
+            ['02', 'Have a professional and experienced team', 'Experienced sales and sourcing support help buyers communicate requirements clearly and efficiently.'],
+            ['03', 'Reasonable and transparent charging standards', 'Clear quotation communication helps buyers understand pricing, quantity, and supply details.'],
+            ['04', 'Intimate and perfect after-sales service', 'Responsive follow-up support is available for buyer questions after the sourcing conversation begins.'],
+          ].map(([number, title, text]) => (
             <div key={title} className="bg-white p-6 sm:p-7">
-              <h3 className="font-display text-xl font-bold tracking-[-0.03em] text-[#10253b]">{title}</h3>
+              <p className="font-display text-3xl font-bold text-[#b7d4df]">{number}</p>
+              <h3 className="font-display mt-4 text-xl font-bold tracking-[-0.03em] text-[#10253b]">{title}</h3>
               <p className="mt-3 text-sm leading-7 text-[#607080]">{text}</p>
             </div>
           ))}
