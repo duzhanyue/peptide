@@ -2,7 +2,7 @@ import { articles } from './news/articles'
 import { productFamilies } from './products/catalog'
 
 export default function sitemap() {
-  const baseUrl = 'https://www.kmaxxpeptide.com'
+  const baseUrl = 'https://kmaxxpeptide.com'
   const pages = ['', '/china-peptide-factory', '/products', '/about', '/certificates', '/contact', '/faq', '/privacy-policy', '/news']
 
   return [

@@ -1,4 +1,4 @@
-const baseUrl = 'https://www.kmaxxpeptide.com'
+const baseUrl = 'https://kmaxxpeptide.com'
 
 export default function robots() {
   return {
