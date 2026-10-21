@@ -29,8 +29,8 @@ ${families}
 ${guides}
 
 ## Contact
-- Email: zzz19182026@outlook.com
-- WhatsApp: +852 5995 1323
+- Email: 18931142995@163.com
+- WhatsApp: +86 18931142995
 `, {
     headers: { 'Content-Type': 'text/plain; charset=utf-8' },
   })

@@ -16,7 +16,7 @@ export default function Contact() {
 
       <section className="section-shell grid gap-5 py-14 lg:grid-cols-2 lg:py-20">
         <a
-          href="https://wa.me/85259951323"
+          href="https://wa.me/8618931142995"
           target="_blank"
           rel="noopener noreferrer"
           className="focus-ring group soft-card rounded-[1.6rem] p-7 transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(8,55,84,0.14)] sm:p-9"
@@ -30,11 +30,11 @@ export default function Contact() {
           <p className="eyebrow mt-8">Fastest Response</p>
           <h2 className="font-display mt-2 text-3xl font-bold tracking-[-0.045em] text-[#123039]">Chat on WhatsApp</h2>
           <p className="mt-3 text-sm leading-7 text-[#6d8176]">Start a direct conversation with our sales team for product and quotation questions.</p>
-          <p className="mt-7 text-sm font-bold text-[#159947]">+852 5995 1323</p>
+          <p className="mt-7 text-sm font-bold text-[#159947]">+86 18931142995</p>
         </a>
 
         <a
-          href="mailto:zzz19182026@outlook.com"
+          href="mailto:18931142995@163.com"
           className="focus-ring group soft-card rounded-[1.6rem] p-7 transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(8,55,84,0.14)] sm:p-9"
         >
           <div className="flex items-start justify-between gap-6">
@@ -46,7 +46,7 @@ export default function Contact() {
           <p className="eyebrow mt-8">Detailed Inquiry</p>
           <h2 className="font-display mt-2 text-3xl font-bold tracking-[-0.045em] text-[#123039]">Send us an email</h2>
           <p className="mt-3 text-sm leading-7 text-[#6d8176]">Email your requirement list when you need to share several products or more order details.</p>
-          <p className="mt-7 break-all text-sm font-bold text-[#087f76]">zzz19182026@outlook.com</p>
+          <p className="mt-7 break-all text-sm font-bold text-[#087f76]">18931142995@163.com</p>
         </a>
       </section>
 

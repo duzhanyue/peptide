@@ -50,7 +50,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         logo: 'https://kmaxxpeptide.com/img/kmax-logo.svg',
         description:
           'A China-based peptide factory website with catalogue pages, sourcing inquiry support, and procurement guides.',
-        email: 'mailto:zzz19182026@outlook.com',
+        email: 'mailto:18931142995@163.com',
         knowsAbout: [
           'Research peptide catalogue',
           'Peptide specification review',
@@ -60,7 +60,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         ],
         contactPoint: {
           '@type': 'ContactPoint',
-          telephone: '+852-5995-1323',
+          telephone: '+86-18931142995',
           contactType: 'sales',
           availableLanguage: ['English'],
         },

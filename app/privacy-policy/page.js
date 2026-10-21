@@ -78,7 +78,7 @@ export default function PrivacyPolicy() {
               <h2 className="font-display text-3xl font-bold tracking-[-0.04em] text-[#123039]">Contact</h2>
               <p className="mt-4 text-sm leading-7 text-[#6d8176]">
                 If you have questions about this Privacy Policy, please contact us through the contact page or email us at{' '}
-                <a href="mailto:zzz19182026@outlook.com" className="font-bold text-[#087f76] hover:text-[#087f76]">zzz19182026@outlook.com</a>.
+                <a href="mailto:18931142995@163.com" className="font-bold text-[#087f76] hover:text-[#087f76]">18931142995@163.com</a>.
               </p>
               <Link href="/contact" className="focus-ring mt-6 inline-block rounded-full bg-[#087f76] px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-white transition hover:bg-[#087f76]">
                 Contact Kmax Peptide
