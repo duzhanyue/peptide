@@ -1,3 +1,4 @@
+import PageHero from '../components/PageHero'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -16,51 +17,43 @@ const values = [
 
 export default function About() {
   return (
-    <main>
-      <section className="relative overflow-hidden bg-[#082b43] pt-20 text-white">
-        <Image src="/img/c1.png" alt="Kmax Peptide facility" fill priority className="object-cover opacity-60" sizes="100vw" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,34,53,0.96),rgba(4,34,53,0.48),rgba(4,34,53,0.25))]" />
-        <div className="section-shell relative py-24 sm:py-32">
-          <p className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-[#a3d1e0]">About Kmax Peptide</p>
-          <h1 className="font-display mt-4 max-w-3xl text-5xl font-bold leading-[1.04] tracking-[-0.055em] sm:text-7xl">Peptide R&D production with factory strength.</h1>
-          <p className="mt-6 max-w-xl text-sm leading-7 text-[#d4e4e9]">Kmax Peptide focuses on peptide research, development, and production support for global buyers who value stable quality, direct communication, and reliable service.</p>
-        </div>
-      </section>
+    <main className="interior-page">
+      <PageHero label="About Kmax" title="Connected by science. Built on trust." description="A focused peptide portfolio and a personal approach to global research sourcing. Get to know the people and purpose behind Kmax." image="/img/c1.png" />
 
       <section className="section-shell grid gap-12 py-20 lg:grid-cols-[0.9fr_1fr] lg:items-center lg:py-24">
         <div className="relative overflow-hidden rounded-[1.8rem] bg-[#dfecee]">
           <Image src="/img/c2.png" alt="Peptide production environment" width={1400} height={950} className="h-full min-h-[360px] w-full object-cover" />
         </div>
         <div>
-          <h2 className="font-display mt-4 text-4xl font-bold leading-tight tracking-[-0.045em] text-[#10253b] sm:text-5xl">Focus on peptide research and development production, source factory strength wins trust.</h2>
-          <p className="mt-6 text-sm leading-7 text-[#607080]">
+          <h2 className="font-display mt-4 text-4xl font-bold leading-tight tracking-[-0.045em] text-[#123039] sm:text-5xl">Focus on peptide research and development production, source factory strength wins trust.</h2>
+          <p className="mt-6 text-sm leading-7 text-[#6d8176]">
             Kmax Peptide is a professional international supplier specializing in high-quality beauty peptide products, bridging cutting-edge biotech and global skincare needs. With years of expertise in cosmeceutical ingredients, we deliver pure, effective peptide solutions for brands worldwide.
           </p>
-          <p className="mt-4 text-sm leading-7 text-[#607080]">
+          <p className="mt-4 text-sm leading-7 text-[#6d8176]">
             Our core offerings cover a comprehensive range of beauty peptides: anti-aging peptides (e.g., Argireline, Matrixyl), hydrating peptides, brightening peptides, and firming peptides. All products are manufactured in GMP-certified facilities, adhering to ISO, FDA, and EU cosmetic standards. We conduct strict raw material sourcing and third-party testing to ensure purity, safety, and efficacy.
           </p>
-                    <p className="mt-4 text-sm leading-7 text-[#607080]">
+                    <p className="mt-4 text-sm leading-7 text-[#6d8176]">
             We provide flexible OEM/ODM services, tailored to startups, mid-sized brands, and large cosmetics enterprises. Our dedicated team offers one-stop support – from formula customization to global logistics and after-sales service – ensuring smooth cooperation.
           </p>
-                              <p className="mt-4 text-sm leading-7 text-[#607080]">
+                              <p className="mt-4 text-sm leading-7 text-[#6d8176]">
             Committed to innovation, we invest in R&D to upgrade peptide formulations, meeting evolving market trends. Choose Kmax Peptide as your trusted partner for premium beauty peptides that enhance your product line and fuel business growth.
           </p>
-          <Link href="/products" className="focus-ring mt-8 inline-block rounded-full bg-[#073754] px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#0c5f8d]">
+          <Link href="/products" className="focus-ring mt-8 inline-block rounded-full bg-[#087f76] px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#087f76]">
             Browse Products
           </Link>
         </div>
       </section>
 
-      <section className="bg-[#edf4f5] py-20">
+      <section className="bg-[#eff6f1] py-20">
         <div className="section-shell">
           <p className="eyebrow">What Matters to Us</p>
-          <h2 className="font-display mt-3 max-w-2xl text-4xl font-bold tracking-[-0.045em] text-[#10253b] sm:text-5xl">A better experience for serious buyers.</h2>
-          <div className="mt-10 grid gap-px overflow-hidden rounded-[1.6rem] border border-[#d7e3e7] bg-[#d7e3e7] lg:grid-cols-3">
+          <h2 className="font-display mt-3 max-w-2xl text-4xl font-bold tracking-[-0.045em] text-[#123039] sm:text-5xl">A better experience for serious buyers.</h2>
+          <div className="mt-10 grid gap-px overflow-hidden rounded-[1.6rem] border border-[#dce7df] bg-[#dce7df] lg:grid-cols-3">
             {values.map(([number, title, text]) => (
               <div key={number} className="bg-white p-7 sm:p-8">
                 <p className="font-display text-4xl font-bold text-[#b7d4df]">{number}</p>
-                <h3 className="font-display mt-7 text-2xl font-bold tracking-[-0.035em] text-[#10253b]">{title}</h3>
-                <p className="mt-4 text-sm leading-7 text-[#607080]">{text}</p>
+                <h3 className="font-display mt-7 text-2xl font-bold tracking-[-0.035em] text-[#123039]">{title}</h3>
+                <p className="mt-4 text-sm leading-7 text-[#6d8176]">{text}</p>
               </div>
             ))}
           </div>
@@ -69,8 +62,8 @@ export default function About() {
 
       <section className="section-shell py-16 sm:py-20">
         <p className="eyebrow">Service Advantages</p>
-        <h2 className="font-display mt-3 text-4xl font-bold tracking-[-0.045em] text-[#10253b] sm:text-5xl">Reliable support from inquiry to after-sales service.</h2>
-        <div className="mt-8 grid gap-px overflow-hidden rounded-[1.4rem] border border-[#d7e3e7] bg-[#d7e3e7] md:grid-cols-2">
+        <h2 className="font-display mt-3 text-4xl font-bold tracking-[-0.045em] text-[#123039] sm:text-5xl">Reliable support from inquiry to after-sales service.</h2>
+        <div className="mt-8 grid gap-px overflow-hidden rounded-[1.4rem] border border-[#dce7df] bg-[#dce7df] md:grid-cols-2">
           {[
             ['01', 'Perfect quality proofreading review process', 'Each inquiry is handled with careful specification checking and quality-focused review before response.'],
             ['02', 'Have a professional and experienced team', 'Experienced sales and sourcing support help buyers communicate requirements clearly and efficiently.'],
@@ -79,8 +72,8 @@ export default function About() {
           ].map(([number, title, text]) => (
             <div key={title} className="bg-white p-6 sm:p-7">
               <p className="font-display text-3xl font-bold text-[#b7d4df]">{number}</p>
-              <h3 className="font-display mt-4 text-xl font-bold tracking-[-0.03em] text-[#10253b]">{title}</h3>
-              <p className="mt-3 text-sm leading-7 text-[#607080]">{text}</p>
+              <h3 className="font-display mt-4 text-xl font-bold tracking-[-0.03em] text-[#123039]">{title}</h3>
+              <p className="mt-3 text-sm leading-7 text-[#6d8176]">{text}</p>
             </div>
           ))}
         </div>
@@ -90,8 +83,8 @@ export default function About() {
       <section className="section-shell grid gap-12 py-20 lg:grid-cols-[1fr_0.9fr] lg:items-center lg:py-24">
         <div>
           <p className="eyebrow">Professional Presentation</p>
-          <h2 className="font-display mt-4 text-4xl font-bold tracking-[-0.045em] text-[#10253b] sm:text-5xl">Built for international sourcing.</h2>
-          <p className="mt-6 max-w-xl text-sm leading-7 text-[#607080]">
+          <h2 className="font-display mt-4 text-4xl font-bold tracking-[-0.045em] text-[#123039] sm:text-5xl">Built for international sourcing.</h2>
+          <p className="mt-6 max-w-xl text-sm leading-7 text-[#6d8176]">
             Clear product categories, accessible contact options, and export-ready communication help buyers move forward with confidence. Send us the peptide family, specification, and quantity you are considering to begin.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -105,13 +98,13 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-[#073754] py-16 text-white">
+      <section className="bg-[#087f76] py-16 text-white">
         <div className="section-shell flex flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <h2 className="font-display text-4xl font-bold tracking-[-0.045em]">Ready to discuss your sourcing list?</h2>
             <p className="mt-3 text-sm text-[#bdd7e1]">Our sales team is available by WhatsApp and email.</p>
           </div>
-          <Link href="/contact" className="focus-ring shrink-0 rounded-full bg-white px-7 py-4 text-center text-xs font-bold uppercase tracking-[0.16em] text-[#073754] hover:bg-[#dff1f7]">
+          <Link href="/contact" className="focus-ring shrink-0 rounded-full bg-white px-7 py-4 text-center text-xs font-bold uppercase tracking-[0.16em] text-[#087f76] hover:bg-[#dff1f7]">
             Contact Sales
           </Link>
         </div>

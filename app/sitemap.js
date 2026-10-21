@@ -3,7 +3,7 @@ import { productFamilies } from './products/catalog'
 
 export default function sitemap() {
   const baseUrl = 'https://kmaxxpeptide.com'
-  const pages = ['', '/china-peptide-factory', '/products', '/about', '/certificates', '/contact', '/faq', '/privacy-policy', '/news']
+  const pages = ['', '/china-peptide-factory', '/products', '/about', '/certificates', '/contact', '/tracking', '/faq', '/privacy-policy', '/news']
 
   return [
     ...pages.map((path) => ({

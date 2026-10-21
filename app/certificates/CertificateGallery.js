@@ -28,23 +28,23 @@ export default function CertificateGallery({ certificates }) {
             key={certificate.src}
             type="button"
             onClick={() => setActiveIndex(index)}
-            className="focus-ring group overflow-hidden rounded-[1.4rem] border border-[#dce5ea] bg-white text-left shadow-[0_18px_45px_rgba(8,55,84,0.08)] transition duration-300 hover:-translate-y-1 hover:border-[#bfd5dd] hover:shadow-[0_24px_60px_rgba(8,55,84,0.14)]"
+            className="focus-ring group overflow-hidden rounded-[1.4rem] border border-[#dce7df] bg-white text-left shadow-[0_18px_45px_rgba(8,55,84,0.08)] transition duration-300 hover:-translate-y-1 hover:border-[#bfd5dd] hover:shadow-[0_24px_60px_rgba(8,55,84,0.14)]"
           >
-            <span className="relative block aspect-[1600/2360] bg-[#edf4f5]">
+            <span className="relative block aspect-[1600/2360] bg-[#eff6f1]">
               <Image
                 src={certificate.src}
                 alt={certificate.alt}
                 fill
                 sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                className="object-cover transition duration-500 group-hover:scale-[1.025]"
+                className="object-contain transition duration-500 group-hover:scale-[1.025]"
               />
-              <span className="absolute inset-x-4 bottom-4 rounded-full bg-white/92 px-4 py-2 text-center text-[0.62rem] font-bold uppercase tracking-[0.16em] text-[#0c5f8d] shadow-[0_12px_30px_rgba(8,55,84,0.16)]">
+              <span className="absolute inset-x-4 bottom-4 rounded-full bg-white/92 px-4 py-2 text-center text-[0.62rem] font-bold uppercase tracking-[0.16em] text-[#087f76] shadow-[0_12px_30px_rgba(8,55,84,0.16)]">
                 View certificate
               </span>
             </span>
             <span className="block border-t border-[#e1ebef] p-4">
-              <span className="font-display block text-lg font-bold tracking-[-0.03em] text-[#10253b]">{certificate.title}</span>
-              <span className="mt-1 block text-xs leading-5 text-[#607080]">Click to view the full-size document image.</span>
+              <span className="font-display block text-lg font-bold tracking-[-0.03em] text-[#123039]">{certificate.title}</span>
+              <span className="mt-1 block text-xs leading-5 text-[#6d8176]">Click to view the full-size document image.</span>
             </span>
           </button>
         ))}
@@ -59,7 +59,7 @@ export default function CertificateGallery({ certificates }) {
                 <p className="text-[0.62rem] font-bold uppercase tracking-[0.18em] text-[#a9d5e4]">Certificate Viewer</p>
                 <h2 className="font-display text-xl font-bold tracking-[-0.03em]">{activeCertificate.title}</h2>
               </div>
-              <button type="button" className="focus-ring rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#073754]" onClick={() => setActiveIndex(null)}>
+              <button type="button" className="focus-ring rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#087f76]" onClick={() => setActiveIndex(null)}>
                 Close
               </button>
             </div>

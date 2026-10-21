@@ -1,22 +1,15 @@
+import certificates from './certificates.json'
+import PageHero from '../components/PageHero'
 import Link from 'next/link'
 import CertificateGallery from './CertificateGallery'
 
 export const metadata = {
-  title: 'Certificates and Company Documents',
+  title: 'COA Certificates and Test Reports',
   description:
-    'View Kmax Peptide certificate images and company document references for international peptide sourcing inquiries.',
+    'View Kmax Peptide COA certificates and test report images for research peptide sourcing inquiries.',
   alternates: { canonical: '/certificates' },
 }
 
-const certificates = Array.from({ length: 8 }, (_, index) => {
-  const number = index + 1
-
-  return {
-    title: `Certificate ${String(number).padStart(2, '0')}`,
-    src: `/img/certificates/certificate-${String(number).padStart(2, '0')}.png`,
-    alt: `Kmax Peptide certificate document ${number}`,
-  }
-})
 
 export default function CertificatesPage() {
   const pageUrl = 'https://kmaxxpeptide.com/certificates'
@@ -25,7 +18,7 @@ export default function CertificatesPage() {
     '@type': 'CollectionPage',
     '@id': `${pageUrl}#page`,
     url: pageUrl,
-    name: 'Kmax Peptide Certificates and Company Documents',
+    name: 'Kmax Peptide COA Certificates and Test Reports',
     description: metadata.description,
     isPartOf: { '@id': 'https://kmaxxpeptide.com/#website' },
     mainEntity: {
@@ -41,7 +34,7 @@ export default function CertificatesPage() {
   }
 
   return (
-    <main className="bg-[#f6fafb] pt-20">
+    <main className="interior-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -49,50 +42,32 @@ export default function CertificatesPage() {
         }}
       />
 
-      <section className="relative overflow-hidden bg-[#082b43] text-white">
-        <div className="absolute inset-0 blueprint-grid opacity-20" />
-        <div className="absolute -right-24 top-12 h-72 w-72 rounded-full bg-[#74bfd6]/18 blur-3xl" />
-        <div className="absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
-        <div className="section-shell relative grid gap-10 py-20 sm:py-24 lg:grid-cols-[1fr_0.55fr] lg:items-end">
-          <div>
-            <p className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-[#a3d1e0]">Company Documents</p>
-            <h1 className="font-display mt-4 max-w-3xl text-5xl font-bold leading-[1.04] tracking-[-0.055em] sm:text-7xl">Certificates for buyer review.</h1>
-            <p className="mt-6 max-w-2xl text-sm leading-7 text-[#d4e4e9]">
-              View selected Kmax Peptide certificate images and company document references in one clean gallery. Use this page as a quick reference during supplier evaluation and sourcing communication.
-            </p>
-          </div>
-          <div className="rounded-[1.6rem] border border-white/15 bg-white/10 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.18)] backdrop-blur-xl">
-            <p className="font-display text-5xl font-bold tracking-[-0.05em]">{certificates.length}</p>
-            <p className="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-[#a3d1e0]">Document Images</p>
-            <p className="mt-5 text-sm leading-7 text-[#d4e4e9]">Click any certificate card below to open a large preview with previous and next controls.</p>
-          </div>
-        </div>
-      </section>
+      <PageHero label="Quality & certificates" title="Confidence begins with clarity." description="Browse our COA certificates and test reports. Contact our team for documentation related to your product and batch." image="/img/c2.png" />
 
       <section className="section-shell py-14 sm:py-20">
         <div className="mb-9 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="eyebrow">Certificate Gallery</p>
-            <h2 className="font-display mt-3 text-4xl font-bold tracking-[-0.045em] text-[#10253b] sm:text-5xl">Company documents at a glance.</h2>
+            <h2 className="font-display mt-3 text-4xl font-bold tracking-[-0.045em] text-[#123039] sm:text-5xl">COA certificates at a glance.</h2>
           </div>
-          <p className="max-w-md text-sm leading-7 text-[#607080]">
-            These images are provided for buyer reference. Contact our sales team if you need the relevant document details for a specific sourcing discussion.
+          <p className="max-w-md text-sm leading-7 text-[#6d8176]">
+            Professional quality. Reliable products. Our COA reports provide clear, documented test results and can be verified on the testing laboratory’s official website using the verification details shown on each report.
           </p>
         </div>
 
         <CertificateGallery certificates={certificates} />
       </section>
 
-      <section className="bg-[#eaf2f4] py-14">
+      <section className="bg-[#eef5f0] py-14">
         <div className="section-shell flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <p className="eyebrow">Need More Information?</p>
-            <h2 className="font-display mt-3 text-3xl font-bold tracking-[-0.04em] text-[#10253b]">Send your sourcing list to our team.</h2>
-            <p className="mt-3 max-w-2xl text-sm leading-7 text-[#607080]">
-              Include the peptide family, requested specification, quantity, destination, and any company document questions you want us to address.
+            <h2 className="font-display mt-3 text-3xl font-bold tracking-[-0.04em] text-[#123039]">Send your sourcing list to our team.</h2>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-[#6d8176]">
+              Include the peptide family, requested specification, quantity, destination, and any COA or batch documentation questions you want us to address.
             </p>
           </div>
-          <Link href="/contact" className="focus-ring shrink-0 rounded-full bg-[#073754] px-7 py-4 text-center text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#0c5f8d]">
+          <Link href="/contact" className="focus-ring shrink-0 rounded-full bg-[#087f76] px-7 py-4 text-center text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#087f76]">
             Contact Sales
           </Link>
         </div>

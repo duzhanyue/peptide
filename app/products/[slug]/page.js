@@ -69,22 +69,22 @@ export default async function ProductFamilyPage({ params }) {
   }
 
   return (
-    <main className="bg-[#f6fafb] pt-20">
+    <main className="interior-page detail-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
         }}
       />
-      <section className="blueprint-grid border-b border-[#dce5ea]">
+      <section className="blueprint-grid border-b border-[#dce7df]">
         <div className="section-shell grid gap-10 py-16 sm:py-20 lg:grid-cols-[1fr_0.55fr] lg:items-center">
           <div>
             <p className="eyebrow">{family.label}</p>
-            <h1 className="font-display mt-4 text-5xl font-bold tracking-[-0.055em] text-[#10253b] sm:text-6xl">{family.name} specifications.</h1>
-            <p className="mt-5 max-w-2xl text-sm leading-7 text-[#607080]">{family.summary}</p>
+            <h1 className="font-display mt-4 text-5xl font-bold tracking-[-0.055em] text-[#123039] sm:text-6xl">{family.name} specifications.</h1>
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-[#6d8176]">{family.summary}</p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <Link href="/contact" className="focus-ring rounded-full bg-[#073754] px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#0c5f8d]">Request Quote</Link>
-              <Link href="/products" className="focus-ring rounded-full border border-[#cfdee4] bg-white px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-[#426276] transition hover:border-[#0c5f8d] hover:text-[#0c5f8d]">All Products</Link>
+              <Link href="/contact" className="focus-ring rounded-full bg-[#087f76] px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#087f76]">Request Quote</Link>
+              <Link href="/products" className="focus-ring rounded-full border border-[#cfdee4] bg-white px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-[#426276] transition hover:border-[#087f76] hover:text-[#087f76]">All Products</Link>
             </div>
           </div>
           <div className="flex h-[360px] items-end justify-center rounded-[1.6rem] bg-[linear-gradient(145deg,#eef6f7,#dcebed)] p-6">
@@ -95,7 +95,7 @@ export default async function ProductFamilyPage({ params }) {
 
       <section className="section-shell py-14 sm:py-20">
         <p className="eyebrow">Available Catalogue Options</p>
-        <h2 className="font-display mt-3 text-4xl font-bold tracking-[-0.045em] text-[#10253b]">Specification list.</h2>
+        <h2 className="font-display mt-3 text-4xl font-bold tracking-[-0.045em] text-[#123039]">Specification list.</h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {family.specifications.map(([name, image]) => (
             <article key={name} className="soft-card overflow-hidden rounded-[1.4rem]">
@@ -103,19 +103,19 @@ export default async function ProductFamilyPage({ params }) {
                 <Image src={image} alt={`${name} catalogue specification`} width={210} height={270} className="product-shadow h-full w-auto object-contain" />
               </div>
               <div className="border-t border-[#e0eaee] p-5">
-                <p className="text-[0.6rem] font-bold uppercase tracking-[0.14em] text-[#0c5f8d]">Factory supply inquiry available</p>
-                <h3 className="font-display mt-2 text-xl font-bold tracking-[-0.03em] text-[#10253b]">{name}</h3>
+                <p className="text-[0.6rem] font-bold uppercase tracking-[0.14em] text-[#087f76]">Factory supply inquiry available</p>
+                <h3 className="font-display mt-2 text-xl font-bold tracking-[-0.03em] text-[#123039]">{name}</h3>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="bg-[#eaf2f4] py-14">
+      <section className="bg-[#eef5f0] py-14">
         <div className="section-shell">
           <p className="eyebrow">Inquiry Checklist</p>
-          <h2 className="font-display mt-3 text-3xl font-bold tracking-[-0.04em] text-[#10253b]">Prepare a focused request.</h2>
-          <p className="mt-3 max-w-2xl text-sm leading-7 text-[#607080]">Include the selected specification, quantity, destination, packaging questions, and factory supply requirements.</p>
+          <h2 className="font-display mt-3 text-3xl font-bold tracking-[-0.04em] text-[#123039]">Prepare a focused request.</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-[#6d8176]">Include the selected specification, quantity, destination, packaging questions, and factory supply requirements.</p>
         </div>
       </section>
     </main>
