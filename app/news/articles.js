@@ -57,7 +57,7 @@ export const articles = [
         heading: 'Look for a clear peptide catalogue',
         paragraphs: [
           'A professional peptide supplier should organize products by family and specification. This makes it easier for buyers to prepare a shortlist and prevents confusion when several similar products are being compared.',
-          'Kmax Peptide provides product-family pages for GHK-CU, RT Peptide, Tirz Peptide, and Semaglu Peptide, giving buyers a stable reference point for inquiry preparation.',
+          'Kmax Peptide provides product-family pages for CU Peptide, RT Peptide, Tirz Peptide, and Semaglu Peptide, giving buyers a stable reference point for inquiry preparation.',
         ],
       },
       {
@@ -629,47 +629,6 @@ export const articles = [
         paragraphs: [
           'A custom peptide manufacturer in China should respond with practical questions and clear next steps. Buyers can compare suppliers by how well they understand the request and how consistently they handle details.',
           'Kmax Peptide gives buyers a direct contact path for catalogue and sourcing inquiries, helping procurement teams start with clear product and quotation information.',
-        ],
-      },
-    ],
-  },
-  {
-    slug: 'ghk-cu-supplier-china-buyer-inquiry-checklist',
-    title: 'GHK-CU Supplier China: Buyer Inquiry Checklist',
-    description:
-      'A sourcing checklist for buyers looking for a GHK-CU supplier in China, covering specifications, quantity, packaging, destination, and quotation communication.',
-    category: 'Product Sourcing',
-    date: '2026-06-09',
-    readTime: '4 min read',
-    image: '/img/c2.png',
-    intro:
-      'Buyers searching for a GHK-CU supplier in China should prepare a focused inquiry before requesting a quote. The most useful message identifies the selected catalogue option, requested quantity, destination, and any packaging or documentation questions.',
-    sections: [
-      {
-        heading: 'Start with the exact GHK-CU specification',
-        paragraphs: [
-          'A product name alone may not be enough for a useful quotation. Buyers should confirm the exact GHK-CU catalogue option and requested specification before contacting the supplier.',
-          'Using the same wording shown on the product page helps the supplier match the inquiry to the right item and reduces unnecessary back-and-forth.',
-        ],
-      },
-      {
-        heading: 'Include the details that affect quotation',
-        paragraphs: [
-          'A clear GHK-CU supplier inquiry should include quantity, destination, packaging questions, and any batch-related information the buyer wants to discuss. These details help the supplier prepare a focused response.',
-        ],
-        bullets: [
-          'Selected GHK-CU catalogue option.',
-          'Requested specification and quantity.',
-          'Destination country or region.',
-          'Packaging and unit questions.',
-          'Batch-related information questions.',
-        ],
-      },
-      {
-        heading: 'Evaluate the supplier response',
-        paragraphs: [
-          'A useful response should repeat the selected item, confirm any missing details, and explain the next step. Buyers should compare whether different suppliers keep the product, specification, and quotation discussion aligned.',
-          'Kmax Peptide provides a dedicated GHK-CU product-family page and direct inquiry support for buyers comparing China peptide factory options.',
         ],
       },
     ],

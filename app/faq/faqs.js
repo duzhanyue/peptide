@@ -2,7 +2,7 @@ export const faqs = [
   {
     question: 'Which peptide catalogue families are listed by Kmax Peptide?',
     answer:
-      'The catalogue currently lists GHK-CU, RT Peptide, Tirz Peptide, and Semaglu Peptide families. Each family page shows the available specification options.',
+      'The catalogue currently lists CU Peptide, RT Peptide, Tirz Peptide, and Semaglu Peptide families. Each family page shows the available specification options.',
   },
   {
     question: 'What information should I include in a quotation inquiry?',

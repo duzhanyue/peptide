@@ -1,14 +1,14 @@
 export const productFamilies = [
   {
-    slug: 'ghk-cu',
-    name: 'GHK-CU',
+    slug: 'cu',
+    name: 'CU Peptide',
     label: 'Copper peptide',
     summary:
-      'A GHK-CU catalogue family with 50 mg and 100 mg specification options for focused research procurement inquiries.',
+      'A CU Peptide catalogue family with 50 mg and 100 mg specification options for focused research procurement inquiries.',
     image: '/img/l1-transparent.png',
     specifications: [
-      ['GHK-CU 50mg', '/img/l1-transparent.png'],
-      ['GHK-CU 100mg', '/img/l1.100-transparent.png'],
+      ['CU Peptide 50mg', '/img/l1-transparent.png'],
+      ['CU Peptide 100mg', '/img/l1.100-transparent.png'],
     ],
   },
   {
@@ -69,64 +69,64 @@ export const productFamilies = [
 
 productFamilies.push(...[
   {
-    "slug": "bpc-157",
-    "name": "BPC 157",
+    "slug": "bc",
+    "name": "BC Peptide",
     "label": "Research peptide",
-    "summary": "BPC 157 research peptide catalogue with 5 mg, 10 mg, 20 mg specification options. Contact our team for availability, documentation, and sourcing details.",
+    "summary": "BC Peptide research peptide catalogue with 5 mg, 10 mg, 20 mg specification options. Contact our team for availability, documentation, and sourcing details.",
     "image": "/img/products/bpc-157-5mg.png",
     "specifications": [
       [
-        "BPC 157 5mg",
+        "BC Peptide 5mg",
         "/img/products/bpc-157-5mg.png"
       ],
       [
-        "BPC 157 10mg",
+        "BC Peptide 10mg",
         "/img/products/bpc-157-10mg.png"
       ],
       [
-        "BPC 157 20mg",
+        "BC Peptide 20mg",
         "/img/products/bpc-157-20mg.png"
       ]
     ]
   },
   {
-    "slug": "mots-c",
-    "name": "MOTS-c",
+    "slug": "ms",
+    "name": "MS Peptide",
     "label": "Research peptide",
-    "summary": "MOTS-c research peptide catalogue with 10 mg, 20 mg, 40 mg specification options. Contact our team for availability, documentation, and sourcing details.",
+    "summary": "MS Peptide research peptide catalogue with 10 mg, 20 mg, 40 mg specification options. Contact our team for availability, documentation, and sourcing details.",
     "image": "/img/products/mots-c-10mg.png",
     "specifications": [
       [
-        "MOTS-c 10mg",
+        "MS Peptide 10mg",
         "/img/products/mots-c-10mg.png"
       ],
       [
-        "MOTS-c 20mg",
+        "MS Peptide 20mg",
         "/img/products/mots-c-20mg.png"
       ],
       [
-        "MOTS-c 40mg",
+        "MS Peptide 40mg",
         "/img/products/mots-c-40mg.png"
       ]
     ]
   },
   {
-    "slug": "tesamorelin",
-    "name": "Tesamorelin",
+    "slug": "tsm",
+    "name": "TSM Peptide",
     "label": "Research peptide",
-    "summary": "Tesamorelin research peptide catalogue with 5 mg, 10 mg, 20 mg specification options. Contact our team for availability, documentation, and sourcing details.",
+    "summary": "TSM Peptide research peptide catalogue with 5 mg, 10 mg, 20 mg specification options. Contact our team for availability, documentation, and sourcing details.",
     "image": "/img/products/tesamorelin-5mg.png",
     "specifications": [
       [
-        "Tesamorelin 5mg",
+        "TSM Peptide 5mg",
         "/img/products/tesamorelin-5mg.png"
       ],
       [
-        "Tesamorelin 10mg",
+        "TSM Peptide 10mg",
         "/img/products/tesamorelin-10mg.png"
       ],
       [
-        "Tesamorelin 20mg",
+        "TSM Peptide 20mg",
         "/img/products/tesamorelin-20mg.png"
       ]
     ]

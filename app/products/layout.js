@@ -1,7 +1,7 @@
 export const metadata = {
   title: 'Peptide Factory Catalogue & Specifications',
   description:
-    'Browse Kmax Peptide factory catalogue options, including GHK-CU, RT, Tirz, and Semaglu peptide product families.',
+    'Browse Kmax Peptide factory catalogue options, including CU Peptide, RT, Tirz, and Semaglu peptide product families.',
   alternates: { canonical: '/products' },
 }
 
