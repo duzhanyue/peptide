@@ -60,7 +60,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         ],
         contactPoint: {
           '@type': 'ContactPoint',
-          telephone: '+86-18931142995',
+          telephone: '+86-18131109493',
           contactType: 'sales',
           availableLanguage: ['English'],
         },

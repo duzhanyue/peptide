@@ -1,7 +1,7 @@
 export default function ContactFloat() {
   return (
     <a
-      href="https://wa.me/8618931142995"
+      href="https://wa.me/8618131109493"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with Kmax Peptide on WhatsApp"
