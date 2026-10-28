@@ -634,48 +634,6 @@ export const articles = [
     ],
   },
   {
-    slug: 'semaglutide-peptide-supplier-inquiry-what-buyers-should-prepare',
-    title: 'Semaglutide Peptide Supplier Inquiry: What Buyers Should Prepare',
-    description:
-      'A buyer-focused inquiry guide for semaglutide peptide supplier searches, covering catalogue references, quantities, packaging questions, and supplier communication.',
-    category: 'Product Sourcing',
-    date: '2026-06-09',
-    readTime: '4 min read',
-    image: '/img/c3.png',
-    intro:
-      'A semaglutide peptide supplier inquiry should be written carefully and professionally. Buyers should focus on catalogue identification, requested specification, quantity, destination, packaging questions, and supplier communication quality.',
-    sections: [
-      {
-        heading: 'Use a clear catalogue reference',
-        paragraphs: [
-          'When buyers contact a semaglutide peptide supplier, the inquiry should identify the exact catalogue page or product-family reference. This helps the supplier understand what is being requested before discussing quotation details.',
-          'Keeping the request tied to catalogue information also helps procurement teams compare supplier replies in a more organized way.',
-        ],
-      },
-      {
-        heading: 'Prepare a focused first message',
-        paragraphs: [
-          'The first message should be concise but complete. Buyers should include the selected item, requested specification, estimated quantity, destination country or region, and any packaging or documentation questions.',
-          'A focused inquiry reduces ambiguity and gives the supplier a better starting point for a practical response.',
-        ],
-        bullets: [
-          'Semaglutide peptide catalogue reference.',
-          'Requested specification and quantity.',
-          'Destination country or region.',
-          'Packaging and storage guidance questions.',
-          'Batch-related information questions.',
-        ],
-      },
-      {
-        heading: 'Judge the response by clarity',
-        paragraphs: [
-          'A reliable supplier response should stay specific. It should confirm the selected catalogue item, ask for missing details when needed, and explain the next sourcing step clearly.',
-          'Kmax Peptide helps international buyers start semaglutide peptide supplier inquiries through product-family pages and direct contact options for quotation support.',
-        ],
-      },
-    ],
-  },
-  {
     slug: 'china-peptide-factory-vs-trading-company-what-buyers-should-check',
     title: 'China Peptide Factory vs Trading Company: What Buyers Should Check',
     description:

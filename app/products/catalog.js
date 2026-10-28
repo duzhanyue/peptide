@@ -73,19 +73,19 @@ productFamilies.push(...[
     "name": "BC Peptide",
     "label": "Research peptide",
     "summary": "BC Peptide research peptide catalogue with 5 mg, 10 mg, 20 mg specification options. Contact our team for availability, documentation, and sourcing details.",
-    "image": "/img/products/bpc-157-5mg.png",
+    "image": "/img/products/BC-5mg.png",
     "specifications": [
       [
         "BC Peptide 5mg",
-        "/img/products/bpc-157-5mg.png"
+        "/img/products/BC-5mg.png"
       ],
       [
         "BC Peptide 10mg",
-        "/img/products/bpc-157-10mg.png"
+        "/img/products/BC-10mg.png"
       ],
       [
         "BC Peptide 20mg",
-        "/img/products/bpc-157-20mg.png"
+        "/img/products/BC-20mg.png"
       ]
     ]
   },
@@ -94,19 +94,19 @@ productFamilies.push(...[
     "name": "MS Peptide",
     "label": "Research peptide",
     "summary": "MS Peptide research peptide catalogue with 10 mg, 20 mg, 40 mg specification options. Contact our team for availability, documentation, and sourcing details.",
-    "image": "/img/products/mots-c-10mg.png",
+    "image": "/img/products/MS-10mg.png",
     "specifications": [
       [
         "MS Peptide 10mg",
-        "/img/products/mots-c-10mg.png"
+        "/img/products/MS-10mg.png"
       ],
       [
         "MS Peptide 20mg",
-        "/img/products/mots-c-20mg.png"
+        "/img/products/MS-20mg.png"
       ],
       [
         "MS Peptide 40mg",
-        "/img/products/mots-c-40mg.png"
+        "/img/products/MS-40mg.png"
       ]
     ]
   },
@@ -115,19 +115,19 @@ productFamilies.push(...[
     "name": "TSM Peptide",
     "label": "Research peptide",
     "summary": "TSM Peptide research peptide catalogue with 5 mg, 10 mg, 20 mg specification options. Contact our team for availability, documentation, and sourcing details.",
-    "image": "/img/products/tesamorelin-5mg.png",
+    "image": "/img/products/TSM-5mg.png",
     "specifications": [
       [
         "TSM Peptide 5mg",
-        "/img/products/tesamorelin-5mg.png"
+        "/img/products/TSM-5mg.png"
       ],
       [
         "TSM Peptide 10mg",
-        "/img/products/tesamorelin-10mg.png"
+        "/img/products/TSM-10mg.png"
       ],
       [
         "TSM Peptide 20mg",
-        "/img/products/tesamorelin-20mg.png"
+        "/img/products/TSM-20mg.png"
       ]
     ]
   }
