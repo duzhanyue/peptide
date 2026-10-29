@@ -375,3 +375,56 @@ body{background:#fff;color:var(--ink);font-family:Arial,Helvetica,sans-serif}h1,
 @media (max-width: 600px) {
   .catalog-tools .filter-tabs, .catalog-tools .catalog-search { flex: initial; }
 }
+
+/* Homepage wholesale contact: a direct conversation instead of a form. */
+.wholesale-whatsapp {
+  min-width: 0;
+  padding: 36px;
+  border: 1px solid #dbe9e2;
+  border-radius: 8px;
+  background: #fbfdfb;
+  color: #123039;
+}
+.whatsapp-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 29px;
+}
+.whatsapp-card-icon {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border-radius: 16px;
+  background: #e5f3eb;
+  color: #087f76;
+}
+.whatsapp-card-icon svg { width: 34px; height: 34px; }
+.whatsapp-card-channel { font-size: 8px; font-weight: 600; letter-spacing: .13em; color: #789487; }
+.wholesale-whatsapp h3 { margin: 13px 0 16px; font-size: 32px; font-weight: 500; line-height: 1.15; letter-spacing: -.045em; }
+.whatsapp-card-description { max-width: 360px; color: #6c8176; font-size: 12px; line-height: 1.85; }
+.whatsapp-conversation-guide { margin: 25px 0; padding: 20px; border: 1px solid #e2ece5; border-radius: 5px; background: #f1f7f3; }
+.whatsapp-conversation-guide > p { margin-bottom: 15px; color: #46695a; font-size: 11px; font-weight: 600; }
+.whatsapp-conversation-guide ul { display: grid; gap: 13px; margin: 0; padding: 0; list-style: none; }
+.whatsapp-conversation-guide li { display: flex; align-items: baseline; gap: 13px; font-size: 12px; color: #49675a; }
+.whatsapp-conversation-guide li span { font-size: 9px; letter-spacing: .04em; color: #128575; }
+.wholesale-whatsapp-button { display: flex; width: 100%; justify-content: space-between; min-height: 51px; background: #087f76; color: #fff; font-size: 12px; }
+.wholesale-whatsapp-button:hover { background: #075d57; }
+.whatsapp-card-note { margin-top: 11px; color: #85968c; font-size: 10px; line-height: 1.7; text-align: center; }
+.whatsapp-card-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 26px; padding-top: 19px; border-top: 1px solid #e1ebe4; }
+.whatsapp-card-footer > span { color: #799084; font-size: 8px; letter-spacing: .1em; }
+.whatsapp-card-footer a { font-size: 12px; font-weight: 600; color: #087f76; }
+@media (max-width: 1100px) {
+  .wholesale-whatsapp { padding: 28px; }
+  .wholesale-whatsapp h3 { font-size: 29px; }
+  .whatsapp-card-channel { font-size: 7px; letter-spacing: .06em; }
+}
+@media (max-width: 600px) {
+  .wholesale-whatsapp { padding: 27px 23px; }
+  .whatsapp-card-top { margin-bottom: 25px; }
+  .wholesale-whatsapp h3 { font-size: 30px; }
+  .whatsapp-conversation-guide { padding: 18px; }
+  .whatsapp-card-footer { margin-top: 23px; }
+}
