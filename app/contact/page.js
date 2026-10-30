@@ -1,4 +1,4 @@
-import QuoteForm from '../components/QuoteForm'
+import WhatsAppContact from '../components/WhatsAppContact'
 import PageHero from '../components/PageHero'
 import Link from 'next/link'
 
@@ -50,7 +50,7 @@ export default function Contact() {
         </a>
       </section>
 
-      <section className="section-shell contact-form-section"><div><p className="eyebrow">YOUR PROJECT, OUR PRIORITY</p><h2>Let’s turn your requirements<br />into a conversation.</h2><p>Send a focused inquiry with your product list, quantity, and destination. You can review your email before sending.</p></div><QuoteForm /></section>
+      <section className="section-shell contact-conversation-section"><div><p className="eyebrow">YOUR PROJECT, OUR PRIORITY</p><h2>Let’s turn your requirements<br />into a conversation.</h2><p>Chat directly with our sales team on WhatsApp. Share your product list, quantity, and destination to discuss a quotation.</p></div><WhatsAppContact /></section>
 <section className="section-shell pb-20">
         <div className="rounded-[1.6rem] border border-[#dce7df] bg-white px-6 py-7 sm:px-8">
           <p className="eyebrow">Helpful Details</p>

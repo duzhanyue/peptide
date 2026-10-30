@@ -1,7 +1,6 @@
 import ProductCatalog from '../components/ProductCatalog'
 import PageHero from '../components/PageHero'
 import Image from 'next/image'
-import Link from 'next/link'
 import { productFamilies, products } from './catalog'
 
 export default function Products() {
@@ -41,9 +40,9 @@ export default function Products() {
             <h2 className="font-display text-3xl font-bold tracking-[-0.04em] text-[#123039]">Looking for more products?</h2>
             <p className="mt-2 text-sm leading-6 text-[#6d8176]">Our catalogue is only the beginning. Contact us to explore more products, additional specifications, and current availability.</p>
           </div>
-          <Link href="/contact" className="focus-ring shrink-0 rounded-full bg-[#087f76] px-6 py-4 text-center text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#087f76]">
-            Contact Us for More Products
-          </Link>
+          <a href="https://wa.me/8618131109493" className="focus-ring shrink-0 rounded-full bg-[#087f76] px-6 py-4 text-center text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#087f76]" target="_blank" rel="noopener noreferrer">
+            More products? Chat on WhatsApp
+          </a>
         </div>
       </section>
     </main>

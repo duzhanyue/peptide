@@ -83,7 +83,7 @@ export default async function ProductFamilyPage({ params }) {
             <h1 className="font-display mt-4 text-5xl font-bold tracking-[-0.055em] text-[#123039] sm:text-6xl">{family.name} specifications.</h1>
             <p className="mt-5 max-w-2xl text-sm leading-7 text-[#6d8176]">{family.summary}</p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <Link href="/contact" className="focus-ring rounded-full bg-[#087f76] px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#087f76]">Request Quote</Link>
+              <a href="https://wa.me/8618131109493" className="focus-ring rounded-full bg-[#087f76] px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#087f76]" target="_blank" rel="noopener noreferrer">Quote via WhatsApp</a>
               <Link href="/products" className="focus-ring rounded-full border border-[#cfdee4] bg-white px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-[#426276] transition hover:border-[#087f76] hover:text-[#087f76]">All Products</Link>
             </div>
           </div>

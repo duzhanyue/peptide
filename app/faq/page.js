@@ -1,5 +1,4 @@
 import PageHero from '../components/PageHero'
-import Link from 'next/link'
 import { faqs } from './faqs'
 
 export const metadata = {
@@ -45,9 +44,9 @@ export default function FAQPage() {
         <div className="mt-10 rounded-[1.5rem] bg-[#087f76] p-7 text-white sm:p-8">
           <h2 className="font-display text-3xl font-bold tracking-[-0.035em]">Have a specific sourcing list?</h2>
           <p className="mt-3 text-sm leading-7 text-[#bdd7e1]">Send the product family, specification, quantity, and destination to our sales team.</p>
-          <Link href="/contact" className="focus-ring mt-6 inline-block rounded-full bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-[#087f76] transition hover:bg-[#dff1f7]">
-            Contact Sales
-          </Link>
+          <a href="https://wa.me/8618131109493" className="focus-ring mt-6 inline-block rounded-full bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-[#087f76] transition hover:bg-[#dff1f7]" target="_blank" rel="noopener noreferrer">
+            Chat on WhatsApp
+          </a>
         </div>
       </section>
     </main>

@@ -22,7 +22,7 @@ export const faqs = [
   {
     question: 'How can I contact Kmax Peptide?',
     answer:
-      'Use the contact page to start a WhatsApp conversation or send an email with your sourcing list.',
+      'Click any WhatsApp inquiry button to chat directly with our sales team at +86 18131109493. You can also find our email on the contact page.',
   },
   {
     question: 'Does Kmax Peptide publish sourcing guides?',

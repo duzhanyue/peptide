@@ -1,6 +1,5 @@
 import certificates from './certificates.json'
 import PageHero from '../components/PageHero'
-import Link from 'next/link'
 import CertificateGallery from './CertificateGallery'
 
 export const metadata = {
@@ -67,9 +66,9 @@ export default function CertificatesPage() {
               Include the peptide family, requested specification, quantity, destination, and any COA or batch documentation questions you want us to address.
             </p>
           </div>
-          <Link href="/contact" className="focus-ring shrink-0 rounded-full bg-[#087f76] px-7 py-4 text-center text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#087f76]">
-            Contact Sales
-          </Link>
+          <a href="https://wa.me/8618131109493" className="focus-ring shrink-0 rounded-full bg-[#087f76] px-7 py-4 text-center text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#087f76]" target="_blank" rel="noopener noreferrer">
+            Chat on WhatsApp
+          </a>
         </div>
       </section>
     </main>

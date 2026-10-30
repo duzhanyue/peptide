@@ -128,9 +128,9 @@ export default async function ArticlePage({ params }) {
               <p className="text-[0.64rem] font-bold uppercase tracking-[0.18em] text-[#9cc9dc]">Start a Conversation</p>
               <h2 className="font-display mt-3 text-3xl font-bold tracking-[-0.035em]">Need a peptide quotation?</h2>
               <p className="mt-3 text-sm leading-7 text-[#bdd7e1]">Send your product name, specification, quantity, and destination to our sales team.</p>
-              <Link href="/contact" className="focus-ring mt-6 inline-block rounded-full bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-[#087f76] transition hover:bg-[#dff1f7]">
-                Contact Sales
-              </Link>
+              <a href="https://wa.me/8618131109493" className="focus-ring mt-6 inline-block rounded-full bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-[#087f76] transition hover:bg-[#dff1f7]" target="_blank" rel="noopener noreferrer">
+                Chat on WhatsApp
+              </a>
             </div>
           </div>
         </div>

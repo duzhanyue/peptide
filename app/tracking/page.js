@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import TrackingForm from './TrackingForm'
 
 export const metadata = {
@@ -27,6 +26,6 @@ export default function TrackingPage() {
     <section className="shipment-search-section"><div className="section-shell shipment-search-centered"><TrackingForm /></div></section>
     <section className="shipment-steps-section"><div className="section-shell"><div className="shipment-section-heading"><h2>How To Track Your Parcel</h2><p>Follow These Simple Steps To Monitor Your Shipment In Real-Time.</p></div><div className="shipment-steps">{steps.map(([number,title,description]) => <article key={number}><span className="shipment-step-number">{number}</span><h3>{title}</h3><p>{description}</p></article>)}</div></div></section>
     <section className="section-shell shipment-faq"><div><p className="eyebrow">A LITTLE CLARITY</p><h2>Shipping questions,<br /><span>answered.</span></h2><p>Our team is here when you need a little extra support.</p><a href="https://wa.me/8618131109493" target="_blank" rel="noopener noreferrer" className="text-link">Chat with us on WhatsApp ↗</a></div><div>{questions.map(([question,answer]) => <details className="faq-item" key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></section>
-    <section className="shipment-support"><div className="section-shell"><div><p className="eyebrow">PERSONAL SUPPORT, EVERY STEP</p><h2>Let’s keep your delivery moving.</h2><p>Have your order reference and tracking number ready when you get in touch.</p></div><Link href="/contact" className="button button-primary">Contact shipping support ↗</Link></div></section>
+    <section className="shipment-support"><div className="section-shell"><div><p className="eyebrow">PERSONAL SUPPORT, EVERY STEP</p><h2>Let’s keep your delivery moving.</h2><p>Have your order reference and tracking number ready when you get in touch.</p></div><a href="https://wa.me/8618131109493" className="button button-primary" target="_blank" rel="noopener noreferrer">Contact shipping support ↗</a></div></section>
   </main>
 }
