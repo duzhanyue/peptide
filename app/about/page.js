@@ -104,7 +104,7 @@ export default function About() {
             <h2 className="font-display text-4xl font-bold tracking-[-0.045em]">Ready to discuss your sourcing list?</h2>
             <p className="mt-3 text-sm text-[#bdd7e1]">Our sales team is available by WhatsApp and email.</p>
           </div>
-          <a href="https://wa.me/8618131109493" className="focus-ring shrink-0 rounded-full bg-white px-7 py-4 text-center text-xs font-bold uppercase tracking-[0.16em] text-[#087f76] hover:bg-[#dff1f7]" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/8618931142995" className="focus-ring shrink-0 rounded-full bg-white px-7 py-4 text-center text-xs font-bold uppercase tracking-[0.16em] text-[#087f76] hover:bg-[#dff1f7]" target="_blank" rel="noopener noreferrer">
             Chat on WhatsApp
           </a>
         </div>

@@ -30,7 +30,7 @@ ${guides}
 
 ## Contact
 - Email: 18931142995@163.com
-- WhatsApp: +86 18131109493
+- WhatsApp: +86 18931142995
 `, {
     headers: { 'Content-Type': 'text/plain; charset=utf-8' },
   })

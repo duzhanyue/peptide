@@ -43,7 +43,7 @@ export default function ChinaPeptideFactoryLanding() {
               <div key={item} className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4">{item}</div>
             ))}
           </div>
-          <a href="https://wa.me/8618131109493" className="focus-ring mt-8 inline-block rounded-full bg-white px-7 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-[#087f76] transition hover:bg-[#dff1f7]" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/8618931142995" className="focus-ring mt-8 inline-block rounded-full bg-white px-7 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-[#087f76] transition hover:bg-[#dff1f7]" target="_blank" rel="noopener noreferrer">
             Start Inquiry
           </a>
         </div>

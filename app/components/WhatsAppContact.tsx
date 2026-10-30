@@ -1,5 +1,5 @@
 export default function WhatsAppContact() {
-  const whatsappUrl = 'https://wa.me/8618131109493'
+  const whatsappUrl = 'https://wa.me/8618931142995'
 
   return (
     <aside className="wholesale-whatsapp" aria-labelledby="wholesale-contact-title">
@@ -33,7 +33,7 @@ export default function WhatsAppContact() {
 
       <div className="whatsapp-card-footer">
         <span>KMAX PEPTIDE · SALES TEAM</span>
-        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">+86 18131109493</a>
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">+86 18931142995</a>
       </div>
     </aside>
   )

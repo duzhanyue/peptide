@@ -66,7 +66,7 @@ export default function CertificatesPage() {
               Include the peptide family, requested specification, quantity, destination, and any COA or batch documentation questions you want us to address.
             </p>
           </div>
-          <a href="https://wa.me/8618131109493" className="focus-ring shrink-0 rounded-full bg-[#087f76] px-7 py-4 text-center text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#087f76]" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/8618931142995" className="focus-ring shrink-0 rounded-full bg-[#087f76] px-7 py-4 text-center text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#087f76]" target="_blank" rel="noopener noreferrer">
             Chat on WhatsApp
           </a>
         </div>
