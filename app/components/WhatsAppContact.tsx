@@ -1,6 +1,6 @@
-export default function WhatsAppContact() {
-  const whatsappUrl = 'https://wa.me/8618931142995'
+import WhatsAppLinks from './WhatsAppLinks'
 
+export default function WhatsAppContact() {
   return (
     <aside className="wholesale-whatsapp" aria-labelledby="wholesale-contact-title">
       <div className="whatsapp-card-top">
@@ -26,15 +26,8 @@ export default function WhatsAppContact() {
         </ul>
       </div>
 
-      <a href={whatsappUrl} className="button wholesale-whatsapp-button" target="_blank" rel="noopener noreferrer">
-        Chat with us on WhatsApp <span aria-hidden="true">↗</span>
-      </a>
-      <p className="whatsapp-card-note">Start a direct conversation with our sales team.</p>
-
-      <div className="whatsapp-card-footer">
-        <span>KMAX PEPTIDE · SALES TEAM</span>
-        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">+86 18931142995</a>
-      </div>
+      <p className="whatsapp-links-label">Choose a WhatsApp number</p>
+      <WhatsAppLinks />
     </aside>
   )
 }
